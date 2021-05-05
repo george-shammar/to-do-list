@@ -1,0 +1,23 @@
+{
+  "name": "to-do-list",
+  "version": "1.0.0",
+  "description": "A To-do list for task and time management created with Javascript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development",
+    "watch": "webpack --watch",
+    "build": "webpack --mode production",
+    "start": "webpack serve --mode development --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/george-shammar/to-do-list.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/george-shammar/to-do-list/issues"
+  },
+  "homepage": "https://github.com/george-shammar/to-do-list#readme"
+}
