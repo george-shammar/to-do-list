@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/george-shammar/to-do-list/issues"
   },
-  "homepage": "https://github.com/george-shammar/to-do-list#readme"
+  "homepage": "https://github.com/george-shammar/to-do-list#readme",
+  "devDependencies": {
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.6.0"
+  }
 }
