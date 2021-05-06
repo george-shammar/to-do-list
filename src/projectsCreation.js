@@ -1,3 +1,12 @@
-const projectCreation = () => {
+let projectsArray = [];
 
+const projectCreation = (title, description) => {
+
+  const project = {
+    title,
+    description,
+    todos: [],
+  };
+  
+  projectsArray.push(project);
 };
