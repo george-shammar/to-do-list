@@ -1,1 +1,0 @@
-(()=>{"use strict";let o=[];((t,s)=>{const e={title:"food",description:"make food",todos:[]};o.push(e)})(),console.log(o[0])})();
