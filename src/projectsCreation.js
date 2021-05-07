@@ -7,6 +7,8 @@ const projectCreation = (title, description) => {
     description,
     todos: [],
   };
-  
+
   projectsArray.push(project);
 };
+
+export {projectsArray, projectCreation};
