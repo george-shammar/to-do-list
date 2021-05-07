@@ -11,3 +11,4 @@ const taskCreation = (projectArray, dueDate, priority, note, status) => {
   projectArray.push(task);
 };
 
+export default taskCreation;
