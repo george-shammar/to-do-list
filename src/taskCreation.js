@@ -1,4 +1,4 @@
-const taskCreation = (projectArray, dueDate, priority, note, status) => {
+const taskCreation = (projectTasksArray, dueDate, priority, note, status) => {
 
   const task = {
     description,
@@ -8,7 +8,7 @@ const taskCreation = (projectArray, dueDate, priority, note, status) => {
     status,
   };
 
-  projectArray.push(task);
+  projectTasksArray.push(task);
 };
 
 export default taskCreation;
