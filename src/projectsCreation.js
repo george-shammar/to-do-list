@@ -3,14 +3,11 @@ import './style.css';
 let projectsArray = [];
 
 const projectCreation = (title, description) => {
-
-  const project = {
-    title,
+   return {
+     title,
     description,
-    todos: [],
-  };
+    todos: []
+   };
+}
 
-  projectsArray.push(project);
-};
-
-export {projectsArray, projectCreation};
+export default projectCreation;
