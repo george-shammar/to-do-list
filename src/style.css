@@ -1,0 +1,14 @@
+.projects {
+    width: 25%;
+    background-color: rgb(19, 18, 18);
+    height: 100%;
+}
+
+.tasks {
+    width: 75%;
+    background-color: rgb(87, 85, 85);
+}
+
+.color-green {
+    color: rgb(96, 236, 96);
+}

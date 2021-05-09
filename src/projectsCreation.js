@@ -1,3 +1,5 @@
+import './style.css';
+
 let projectsArray = [];
 
 const projectCreation = (title, description) => {
