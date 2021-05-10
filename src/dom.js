@@ -12,10 +12,10 @@ const newProject = () => {
         });            
         
         const formSubmit = document.getElementById('submit');
-        formSubmit.addEventListener('click', addNew());
+        formSubmit.addEventListener('click', submit());
 }
 
-const addNew = () => {
+const submit = () => {
     const projectTitle = document.querySelector('.title').value;
     const projectDescription = document.querySelector('.description').value;
 
@@ -31,9 +31,9 @@ const displayProjectTitle = () => {
         let i = 0;
         projectArray.forEach((project) => {
         const projectDiv = document.createElement('div');
-        projectDiv.setAttribute('class', 'color-white');
+        projectDiv.setAttribute('class', 'color-white px-4 bold');
         const titleparagraph = document.createElement('p');
-        const titleText = document.createTextNode(`${project.title}`);
+        const titleText = document.createTextNode(`# ${project.title}`);
         titleparagraph.appendChild(titleText);
         projectDiv.appendChild(titleparagraph);
 
