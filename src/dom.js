@@ -26,7 +26,7 @@ const addNew = () => {
     displayProjectTitle();
 }
 
-function displayProjectTitle() {
+const displayProjectTitle = () => {
     document.querySelector('#project-container').innerHTML = '';
         let i = 0;
         projectArray.forEach((project) => {
