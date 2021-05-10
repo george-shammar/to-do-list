@@ -14,16 +14,17 @@
         <h1 class='color-blue bold px-4'>taskIT</h1><hr class='color-green'>
           <h2 class='color-green px-4 mt-5'><i class="fas fa-briefcase"></i>  PROJECTS</h2>
           <h3 class='btn btn-success px-5 mx-4 my-3' id='new-project'>New Project</h3>
-            <div id="project-container" class='px-4 color-white'>
+
+            <div id='project-container'>
               
             </div> 
             
             <!-- form -->
             <div class='px-4 border border-success py-5 mx-2 mb-2' id='project-form'>
-                <label class='title-label color-green' for='project-title'>Title</label><br>
-                <input class='title-input' type='text' id='project-title' placeholder="E.g Today's activities."><br>
-                <label class='description-label color-green' for='project-description'>Description</label><br>
-                <input class='description-input' type='text' id='project-description' placeholder='Short project description'>
+                <label for='exampleInputTitle' class='form-label color-green'>Title</label><br>
+                <input class='form-control title' type='text' id="exampleInputTitle"><br>
+                <label for='exampleInputDescripion' class='form-label color-green'>Description</label><br>
+                <input class='form-control description' type='text' id='exampleInputDescription'>
                 <button class="btn btn-primary mt-2" id='submit'>Add Project</button>
             </div>
       </div>
