@@ -8,9 +8,9 @@ let projectsArray = [];
 
     const submitButton = document.getElementById('submit');
 
-    submitButton.onclick = () => {
+    submitButton.addEventListener('click', function removeForm() {
         projectForm.style.display = 'none';
-    };
+    });
 
 const newProject = () => {
         newProjectButton.addEventListener('click', function form() {
