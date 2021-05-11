@@ -1,10 +1,8 @@
-import './style.css';
-
 const projectCreation = (title, description) => {
    return {
      title,
-    description,
-    todos: []
+     description,
+     todos: []
    };
 };
 

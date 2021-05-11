@@ -1,6 +1,6 @@
 import projectCreation from './projectsCreation';
 
-let projectsArray = [];
+const projectsArray = [];
 
     const newProjectButton = document.getElementById('new-project');
     const projectForm=document.getElementById('project-form');
@@ -18,8 +18,8 @@ const newProject = () => {
         });            
 
         const formSubmit = document.getElementById('submit');
-        formSubmit.addEventListener('click',  submit());
-}
+        formSubmit.addEventListener('click',  submit);
+};
 
 const submit = () => {
     const projectTitle = document.querySelector('.title').value;
@@ -31,27 +31,23 @@ const submit = () => {
     
     displayProjectTitle();
     
-}
+};
 
 const displayProjectTitle = () => {
     document.querySelector('#project-container').innerHTML = '';
-        let i = 0;
-        projectsArray.forEach((project) => {
-        const projectDiv = document.createElement('div');
-        projectDiv.setAttribute('class', 'color-white px-4 bold');
-        const titleparagraph = document.createElement('p');
-        const titleText = document.createTextNode(` ${project.title}`);
-        titleparagraph.appendChild(titleText);
-        projectDiv.appendChild(titleparagraph);
+    projectsArray.forEach(project => {
+      const projectDiv = document.createElement('div');
+      projectDiv.setAttribute('class', 'color-white px-4 bold');
+      const titleparagraph = document.createElement('p');
+      const titleText = document.createTextNode(` ${project.title}`);
+      titleparagraph.appendChild(titleText);
+      projectDiv.appendChild(titleparagraph);
 
-        const projectContainer = document.getElementById('project-container');
-        projectContainer.appendChild(projectDiv);
-
-        i += 1;
-        
+      const projectContainer = document.getElementById('project-container');
+      projectContainer.appendChild(projectDiv);
     });
  
-}
+};
 
 
 export default newProject;
