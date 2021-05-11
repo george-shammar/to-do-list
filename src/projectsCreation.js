@@ -1,14 +1,11 @@
-let projectsArray = [];
+import './style.css';
 
 const projectCreation = (title, description) => {
-
-  const project = {
-    title,
+   return {
+     title,
     description,
-    todos: [],
-  };
-
-  projectsArray.push(project);
+    todos: []
+   };
 };
 
-export {projectsArray, projectCreation};
+export default projectCreation;
