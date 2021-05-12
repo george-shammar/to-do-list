@@ -60,12 +60,13 @@ const displayTask = () => {
 
 const task = () => {
     document.querySelector('#task-container').innerHTML = '';
+    projectsArray.forEach(project => {
     const taskTitleParagraph = document.createElement('p');
-    const taskTextTitle = document.createTextNode('Now you see me');
+    const taskTextTitle = document.createTextNode(` ${project.title}`);
     taskTitleParagraph.appendChild(taskTextTitle);
 
     const taskDescriptionParagraph = document.createElement('p');
-    const taskDescriptionText = document.createTextNode('Now you see me description');
+    const taskDescriptionText = document.createTextNode(` ${project.description}`);
     taskDescriptionParagraph.appendChild(taskDescriptionText);
 
     const taskDiv = document.createElement('div');
@@ -76,6 +77,7 @@ const task = () => {
     
     const taskContainer = document.getElementById('task-container');
     taskContainer.appendChild(taskDiv);
+    });
 }
 
 export default newProject;
