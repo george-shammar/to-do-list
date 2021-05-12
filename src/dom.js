@@ -39,10 +39,10 @@ const displayProjectTitle = () => {
     document.querySelector('#project-container').innerHTML = '';
     projectsArray.forEach(project => {
       const projectDiv = document.createElement('div');
-      projectDiv.setAttribute('class', 'color-white px-4 bold project-div');
+      projectDiv.setAttribute('class', 'color-white px-4 bolden project-div');
       projectDiv.setAttribute('id', i);
       const titleparagraph = document.createElement('p');
-      const titleText = document.createTextNode(` ${project.title}`);
+      const titleText = document.createTextNode(`# ${project.title}`);
       titleparagraph.appendChild(titleText);
       projectDiv.appendChild(titleparagraph);
 
@@ -70,13 +70,20 @@ const task = () => {
     taskDescriptionParagraph.appendChild(taskDescriptionText);
 
     const taskDiv = document.createElement('div');
-    taskDiv.setAttribute('class', 'color-white px-4 pt-5 bold');
+    taskDiv.setAttribute('class', 'color-white px-4 pt-5 bold-text');
 
     taskDiv.appendChild(taskTitleParagraph);
     taskDiv.appendChild(taskDescriptionParagraph);
     
     const taskContainer = document.getElementById('task-container');
     taskContainer.appendChild(taskDiv);
+
+    // Add task button
+    const newTaskButton = document.createElement('h3');
+    newTaskButton.setAttribute('class', 'btn btn-success px-5 mx-4 my-3')
+    const newTaskText = document.createTextNode('Add A New "To-Do"');
+    newTaskButton.appendChild(newTaskText);
+    taskContainer.appendChild(newTaskButton);
     });
 }
 
