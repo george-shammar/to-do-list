@@ -30,7 +30,8 @@ const submit = () => {
     projectsArray.push(newProject);
     
     displayProjectTitle();
-    
+    displayTask();
+  
 };
 
 const displayProjectTitle = () => {
@@ -53,12 +54,28 @@ const displayProjectTitle = () => {
 
 
 const displayTask = () => {
-    const projectWithTask = document.querySelector('.projectDiv');
+    const projectWithTask = document.querySelector('.project-div');
     projectWithTask.addEventListener('click', task);
 }
 
 const task = () => {
+    document.querySelector('#task-container').innerHTML = '';
+    const taskTitleParagraph = document.createElement('p');
+    const taskTextTitle = document.createTextNode('Now you see me');
+    taskTitleParagraph.appendChild(taskTextTitle);
+
+    const taskDescriptionParagraph = document.createElement('p');
+    const taskDescriptionText = document.createTextNode('Now you see me description');
+    taskDescriptionParagraph.appendChild(taskDescriptionText);
+
+    const taskDiv = document.createElement('div');
+    taskDiv.setAttribute('class', 'color-white px-4 bold');
+
+    taskDiv.appendChild(taskTitleParagraph);
+    taskDiv.appendChild(taskDescriptionParagraph);
     
+    const taskContainer = document.getElementById('task-container');
+    taskContainer.appendChild(taskDiv);
 }
 
 export default newProject;
