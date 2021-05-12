@@ -47,8 +47,8 @@ const displayProjectTitle = () => {
 
       const projectContainer = document.getElementById('project-container');
       projectContainer.appendChild(projectDiv);
+      i++;
     });
-    i++;
 };
 
 
