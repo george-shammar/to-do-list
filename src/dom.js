@@ -34,10 +34,12 @@ const submit = () => {
 };
 
 const displayProjectTitle = () => {
+    let i = 0;
     document.querySelector('#project-container').innerHTML = '';
     projectsArray.forEach(project => {
       const projectDiv = document.createElement('div');
       projectDiv.setAttribute('class', 'color-white px-4 bold');
+      projectDiv.setAttribute('id', i);
       const titleparagraph = document.createElement('p');
       const titleText = document.createTextNode(` ${project.title}`);
       titleparagraph.appendChild(titleText);
@@ -46,7 +48,7 @@ const displayProjectTitle = () => {
       const projectContainer = document.getElementById('project-container');
       projectContainer.appendChild(projectDiv);
     });
- 
+    i++;
 };
 
 
