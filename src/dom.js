@@ -38,7 +38,7 @@ const displayProjectTitle = () => {
     document.querySelector('#project-container').innerHTML = '';
     projectsArray.forEach(project => {
       const projectDiv = document.createElement('div');
-      projectDiv.setAttribute('class', 'color-white px-4 bold');
+      projectDiv.setAttribute('class', 'color-white px-4 bold project-div');
       projectDiv.setAttribute('id', i);
       const titleparagraph = document.createElement('p');
       const titleText = document.createTextNode(` ${project.title}`);
