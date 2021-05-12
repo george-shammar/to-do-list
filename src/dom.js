@@ -1,4 +1,4 @@
-import projectCreation from './projectsCreation';
+import {projectCreation, taskCreation} from './projectsCreation';
 
 const projectsArray = [];
 
