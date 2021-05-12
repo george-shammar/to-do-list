@@ -6,4 +6,13 @@ const projectCreation = (title, description) => {
    };
 };
 
-export default projectCreation;
+const taskCreation = (description, dueDate, priority, status, project) => {
+  project.todos.push({
+    description,
+    dueDate,
+    priority,
+    status
+  });
+};
+
+export {projectCreation, taskCreation};
