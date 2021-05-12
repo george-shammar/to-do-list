@@ -22,6 +22,6 @@
 }
 
 .project-div:hover {
-    background-color: #ccc;
+    background-color: rgb(87, 85, 85);
     cursor: pointer;
 }

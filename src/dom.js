@@ -62,15 +62,15 @@ const task = () => {
     document.querySelector('#task-container').innerHTML = '';
     projectsArray.forEach(project => {
     const taskTitleParagraph = document.createElement('p');
-    const taskTextTitle = document.createTextNode(` ${project.title}`);
+    const taskTextTitle = document.createTextNode(`Project: ${project.title}`);
     taskTitleParagraph.appendChild(taskTextTitle);
 
     const taskDescriptionParagraph = document.createElement('p');
-    const taskDescriptionText = document.createTextNode(` ${project.description}`);
+    const taskDescriptionText = document.createTextNode(`Description: ${project.description}`);
     taskDescriptionParagraph.appendChild(taskDescriptionText);
 
     const taskDiv = document.createElement('div');
-    taskDiv.setAttribute('class', 'color-white px-4 bold');
+    taskDiv.setAttribute('class', 'color-white px-4 pt-5 bold');
 
     taskDiv.appendChild(taskTitleParagraph);
     taskDiv.appendChild(taskDescriptionParagraph);
