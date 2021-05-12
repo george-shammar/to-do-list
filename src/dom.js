@@ -52,4 +52,13 @@ const displayProjectTitle = () => {
 };
 
 
+const displayTask = () => {
+    const projectWithTask = document.querySelector('.projectDiv');
+    projectWithTask.addEventListener('click', task);
+}
+
+const task = () => {
+    
+}
+
 export default newProject;
