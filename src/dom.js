@@ -56,7 +56,7 @@ const displayProjectTitle = () => {
 const displayTask = () => {
     const projectWithTask = document.querySelector('.project-div');
     projectWithTask.addEventListener('click', task);
-}
+};
 
 const task = () => {
     document.querySelector('#task-container').innerHTML = '';
@@ -80,11 +80,11 @@ const task = () => {
 
     // Add task button
     const newTaskButton = document.createElement('h3');
-    newTaskButton.setAttribute('class', 'btn btn-success px-5 mx-4 my-3')
+    newTaskButton.setAttribute('class', 'btn btn-success px-5 mx-4 my-3');
     const newTaskText = document.createTextNode('Add A New "To-Do"');
     newTaskButton.appendChild(newTaskText);
     taskContainer.appendChild(newTaskButton);
     });
-}
+};
 
 export default newProject;
