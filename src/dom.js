@@ -49,6 +49,7 @@ const displayProjectTitle = () => {
       projectContainer.appendChild(projectDiv);
       i++;
     });
+    myEvent();
 };
 
 
@@ -58,7 +59,6 @@ const displayTask = (projectId) => {
     projectWithTask.addEventListener('click', function(){
         task(projectId);
     });
-    myEvent();
 };
 
 const task = (projectId) => {
