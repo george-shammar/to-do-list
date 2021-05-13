@@ -31,7 +31,6 @@ const submit = () => {
     
     displayProjectTitle();
     displayTask();
-  
 };
 
 const displayProjectTitle = () => {
@@ -53,14 +52,18 @@ const displayProjectTitle = () => {
 };
 
 
-const displayTask = () => {
-    const projectWithTask = document.querySelector('.project-div');
-    projectWithTask.addEventListener('click', task);
+const displayTask = (projectId) => {
+    const projectWithTask = document.getElementById(projectId);
+
+    projectWithTask.addEventListener('click', function(){
+        task(projectId);
+    });
+    myEvent();
 };
 
-const task = () => {
+const task = (projectId) => {
     document.querySelector('#task-container').innerHTML = '';
-    projectsArray.forEach(project => {
+    let project = projectsArray[projectId];
     const taskTitleParagraph = document.createElement('p');
     const taskTextTitle = document.createTextNode(`Project: ${project.title}`);
     taskTitleParagraph.appendChild(taskTextTitle);
@@ -84,7 +87,16 @@ const task = () => {
     const newTaskText = document.createTextNode('Add A New "To-Do"');
     newTaskButton.appendChild(newTaskText);
     taskContainer.appendChild(newTaskButton);
-    });
 };
+
+function myEvent(){
+    let projectsDiv = document.getElementsByClassName('project-div');
+
+    for(let i = 0; i<projectsDiv.length; i++){
+        projectsDiv[i].addEventListener('click', function(){
+            displayTask(this.id);
+        });
+    }
+}
 
 export default newProject;
