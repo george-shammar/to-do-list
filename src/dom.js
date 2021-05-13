@@ -84,6 +84,7 @@ const task = (projectId) => {
     // Add task button
     const newTaskButton = document.createElement('h3');
     newTaskButton.setAttribute('class', 'btn btn-success px-5 mx-4 my-3');
+    newTaskButton.setAttribute('id', 'new-task');
     const newTaskText = document.createTextNode('Add A New "To-Do"');
     newTaskButton.appendChild(newTaskText);
     taskContainer.appendChild(newTaskButton);
@@ -98,5 +99,13 @@ function myEvent(){
         });
     }
 }
+
+
+
+// Event listener to display form for new task
+const newTaskButton = document.getElementById('new-task');
+const taskForm=document.getElementById('task-form');
+taskForm.style.display = 'none';
+
 
 export default newProject;
