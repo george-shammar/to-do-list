@@ -31,6 +31,33 @@
         <div id="task-container">
 
         </div>
+         <!-- task form -->
+        
+          <div class='px-4 border border-success py-5 mx-2 mb-2' id='task-form'>
+            <h5>Add A New Task</h5>
+            <label for='exampleInputTitle' class='form-label color-green'>Description</label><br>
+            <input class='form-control task' type='text' id="exampleInputTitle"><br>
+            <label for='exampleInputDescripion' class='form-label color-green'>Due Date</label><br>
+            <input class='form-control description' type='text' id='exampleInputDescription'>
+
+            <label for='exampleInputDescripion' class='form-label color-green pt-3'>Priority</label><br>
+
+            <input type="radio" id="high" name="priority" value="high">
+            <label for="high">High</label>
+            <input type="radio" id="medium" name="priority" value="medium">
+            <label for="medium">Medium</label>
+            <input type="radio" id="low" name="priority" value="low">
+            <label for="low">Low</label><br>
+
+            <label for='exampleInputDescripion' class='form-label color-green pt-3'>Status</label><br>
+            <input type="radio" id="medium" name="priority" value="medium">
+            <label for="medium">Pending</label>
+            <input type="radio" id="low" name="priority" value="low">
+            <label for="low">Completed</label><br>
+
+            <button class="btn btn-primary mt-2" id='submit-task'>Create Task</button>
+          </div>
+        
       </div>
       
     </div>

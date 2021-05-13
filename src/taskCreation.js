@@ -1,4 +1,4 @@
-const taskCreation = (projectTasksArray, description, dueDate, priority, note, status) => {
+const taskCreation = (projectTasksArray, description, dueDate, priority, status) => {
 
   const task = {
     description,
