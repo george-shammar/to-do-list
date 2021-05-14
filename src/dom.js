@@ -160,7 +160,17 @@ const showTask = () => {
     editIcon.setAttribute('class','fas fa-pencil-alt color-green px-2');
     editIconContainer.appendChild(editIcon);
     iconContainer.appendChild(editIconContainer);
+
+    const thrashIconContainer = document.createElement('div');
+    const thrashIcon = document.createElement('i');
+    thrashIcon.setAttribute('class', 'fas fa-trash-alt color-green px-2');
+    thrashIconContainer.appendChild(thrashIcon);
+    iconContainer.appendChild(thrashIconContainer);
+
 }
 
 
 export default newProject;
+
+
+
