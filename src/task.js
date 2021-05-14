@@ -10,8 +10,8 @@ const taskCreation = (description, dueDate, priority, status, project) => {
 
 };
 
-const taskDiv = document.createElement('div');
-taskDiv.setAttribute('class', 'color-white px-4 pt-5 bold-text');
+// const taskDiv = document.createElement('div');
+// taskDiv.setAttribute('class', 'color-white px-4 pt-5 bold-text');
 
 
 const newTaskForm = document.getElementById('task-form');
@@ -28,9 +28,14 @@ const task = (projectId) => {
   const taskDescriptionText = document.createTextNode(`Description: ${project.description}`);
   taskDescriptionParagraph.appendChild(taskDescriptionText);
 
+    const taskDiv = document.createElement('div');
+    taskDiv.setAttribute('class', 'color-white px-4 pt-5 bold-text');
+
   taskDiv.appendChild(taskTitleParagraph);
   taskDiv.appendChild(taskDescriptionParagraph);
   
+  
+
   const taskContainer = document.getElementById('task-container');
   taskContainer.appendChild(taskDiv);
 
@@ -52,12 +57,10 @@ const task = (projectId) => {
 
   submitTaskButton.onclick = () => {
       newTaskForm.style.display = 'none';
-        showTask();
-  }
-};
+
 
 // display task=====================================================
-const showTask = () => {
+
   const showContainer = document.createElement('div');
   showContainer.setAttribute('class', 'show-task mt-3 pt-1 px-2 mx-2 d-flex');
   taskDiv.appendChild(showContainer);
@@ -108,7 +111,11 @@ const showTask = () => {
   thrashIcon.setAttribute('class', 'fas fa-trash-alt color-green px-2');
   thrashIconContainer.appendChild(thrashIcon);
   iconContainer.appendChild(thrashIconContainer);
-}
+       
+  }
+};
+
+
 
 
 
