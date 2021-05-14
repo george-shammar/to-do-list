@@ -1,16 +1,14 @@
 import projectsArray from './project';
 
-const taskCreation = (description, dueDate, priority, status, project) => {
+const taskCreation = (description, dueDate, priority, project) => {
     project.todos.push({
       description,
       dueDate,
       priority,
-      status,
-      edit(description, dueDate, priority, status){
+      edit(description, dueDate, priority){
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
-        this.status = status;
       }
     });
 };
@@ -57,62 +55,63 @@ const task = (projectId) => {
   const submitTaskButton = document.getElementById('submit-task');
 
   submitTaskButton.onclick = () => {
+      taskCreation('my description', '24/032/21','hight',project);
       newTaskForm.style.display = 'none';
 
 
 // display task=====================================================
+   project.todos.forEach(task => {
+    const showContainer = document.createElement('div');
+    showContainer.setAttribute('class', 'show-task mt-3 pt-1 px-2 mx-2 d-flex');
+    taskDiv.appendChild(showContainer);
+    
+    const radioTask = document.createElement('div');
+    radioTask.setAttribute('class', 'd-flex');
 
-  const showContainer = document.createElement('div');
-  showContainer.setAttribute('class', 'show-task mt-3 pt-1 px-2 mx-2 d-flex');
-  taskDiv.appendChild(showContainer);
-  
-  const radioTask = document.createElement('div');
-  radioTask.setAttribute('class', 'd-flex');
-
-  const radio = document.createElement('div');
-  radio.setAttribute('class', 'radio color-green mt-1');
-
-
-  const taskTask = document.createElement('div');
-  taskTask.setAttribute('class', 'to-do color-white px-2 pt-1');
-  const taskTaskParagraph = document.createElement('p');
-  const taskTaskText = document.createTextNode('First to-do task for this project');
-  taskTaskParagraph.appendChild(taskTaskText);
-  taskTask.appendChild(taskTaskParagraph);
-
-  radioTask.appendChild(radio);
-  radioTask.appendChild(taskTask);
-
-  showContainer.appendChild(radioTask);
+    const radio = document.createElement('div');
+    radio.setAttribute('class', 'radio color-green mt-1');
 
 
-  // create icons
-  const iconContainer = document.createElement('div');
-  iconContainer.setAttribute('class', 'd-flex icons pt-1');
+    const taskTask = document.createElement('div');
+    taskTask.setAttribute('class', 'to-do color-white px-2 pt-1');
+    const taskTaskParagraph = document.createElement('p');
+    const taskTaskText = document.createTextNode(task.description);
+    taskTaskParagraph.appendChild(taskTaskText);
+    taskTask.appendChild(taskTaskParagraph);
 
-  const taskDueDate = document.createElement('div');
-  taskDueDate.setAttribute('class', 'color-white px-2');
-  const taskDueDateParagraph = document.createElement('p');
-  const taskDueDateText = document.createTextNode('Due Date:13/10');
-  taskDueDateParagraph.appendChild(taskDueDateText);
-  taskDueDate.appendChild(taskDueDateParagraph);
+    radioTask.appendChild(radio);
+    radioTask.appendChild(taskTask);
 
-  iconContainer.appendChild(taskDueDate);
-  showContainer.appendChild(iconContainer);
+    showContainer.appendChild(radioTask);
 
 
-  const editIconContainer = document.createElement('div');
-  const editIcon = document.createElement('i');
-  editIcon.setAttribute('class','fas fa-pencil-alt color-green px-2');
-  editIconContainer.appendChild(editIcon);
-  iconContainer.appendChild(editIconContainer);
+    // create icons
+    const iconContainer = document.createElement('div');
+    iconContainer.setAttribute('class', 'd-flex icons pt-1');
 
-  const thrashIconContainer = document.createElement('div');
-  const thrashIcon = document.createElement('i');
-  thrashIcon.setAttribute('class', 'fas fa-trash-alt color-green px-2');
-  thrashIconContainer.appendChild(thrashIcon);
-  iconContainer.appendChild(thrashIconContainer);
-       
+    const taskDueDate = document.createElement('div');
+    taskDueDate.setAttribute('class', 'color-white px-2');
+    const taskDueDateParagraph = document.createElement('p');
+    const taskDueDateText = document.createTextNode(`Due Date: ${task.dueDate}`);
+    taskDueDateParagraph.appendChild(taskDueDateText);
+    taskDueDate.appendChild(taskDueDateParagraph);
+
+    iconContainer.appendChild(taskDueDate);
+    showContainer.appendChild(iconContainer);
+
+
+    const editIconContainer = document.createElement('div');
+    const editIcon = document.createElement('i');
+    editIcon.setAttribute('class','fas fa-pencil-alt color-green px-2');
+    editIconContainer.appendChild(editIcon);
+    iconContainer.appendChild(editIconContainer);
+
+    const thrashIconContainer = document.createElement('div');
+    const thrashIcon = document.createElement('i');
+    thrashIcon.setAttribute('class', 'fas fa-trash-alt color-green px-2');
+    thrashIconContainer.appendChild(thrashIcon);
+    iconContainer.appendChild(thrashIconContainer);
+    });
   };
 };
 
