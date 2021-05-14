@@ -140,7 +140,21 @@ const showTask = () => {
     showContainer.appendChild(radioTask);
 
 
-    
+    // create icons
+    const iconContainer = document.createElement('div');
+    iconContainer.setAttribute('class', 'd-flex');
+
+    const taskDueDate = document.createElement('div');
+    taskDueDate.setAttribute('class', 'color-blue px-2');
+    const taskDueDateParagraph = document.createElement('p');
+    const taskDueDateText = document.createTextNode('Due Date:13/10');
+    taskDueDateParagraph.appendChild(taskDueDateText);
+    taskDueDate.appendChild(taskDueDateParagraph);
+
+    iconContainer.appendChild(taskDueDate);
+    showContainer.appendChild(iconContainer);
+
+
 }
 
 
