@@ -33,3 +33,19 @@
 .bolden {
     font-size: 1.5rem;
 }
+
+.show-task {
+    border-radius: 5px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.radio {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid;
+    cursor: pointer;
+}

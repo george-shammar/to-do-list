@@ -11,7 +11,7 @@ const projectsArray = [];
     submitButton.addEventListener('click', function removeForm() {
         projectForm.style.display = 'none';
     });
-    
+
     // New task form display style: none
     const newTaskForm = document.getElementById('task-form');
     newTaskForm.style.display = 'none';
@@ -117,10 +117,14 @@ function myEvent(){
     }
 }
 
-
-
-
-
+const showTask = () => {
+    const showContainer = document.createElement('div');
+    showContainer.setAttribute('class', 'show-task mt-3 pt-3 px-2 mx-2 d-flex')
+}
 
 
 export default newProject;
+
+
+
+
