@@ -170,16 +170,17 @@ const task = (projectId) => {
         newTaskForm.style.display = 'none';
 
 
-        // display task
+// display task
     const showContainer = document.createElement('div');
-    showContainer.setAttribute('class', 'show-task mt-3 pt-3 px-2 mx-2 d-flex');
+    showContainer.setAttribute('class', 'show-task mt-3 pt-1 px-2 mx-2 d-flex');
     taskDiv.appendChild(showContainer);
     
     const radioTask = document.createElement('div');
     radioTask.setAttribute('class', 'd-flex');
 
     const radio = document.createElement('div');
-    radio.setAttribute('class', 'radio color-green');
+    radio.setAttribute('class', 'radio color-green mt-2');
+
 
     const taskTask = document.createElement('div');
     taskTask.setAttribute('class', 'to-do color-white px-2');
