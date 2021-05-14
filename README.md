@@ -7,6 +7,8 @@
 
 ## Built With
 - Javascript.
+- HTML.
+- CSS.
 
 ## Getting Started
 
