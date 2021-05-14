@@ -46,10 +46,10 @@ const displayProjectTitle = () => {
   document.querySelector('#project-container').innerHTML = '';
   projectsArray.forEach(project => {
     const projectDiv = document.createElement('div');
-    projectDiv.setAttribute('class', 'color-white px-4 bolden project-div');
+    projectDiv.setAttribute('class', 'color-white px-4 bolden show-project mx-4 pt-3 mb-2 project-div');
     projectDiv.setAttribute('id', i);
     const titleparagraph = document.createElement('p');
-    const titleText = document.createTextNode(`# ${project.title}`);
+    const titleText = document.createTextNode(`${project.title}`);
     titleparagraph.appendChild(titleText);
     projectDiv.appendChild(titleparagraph);
 
