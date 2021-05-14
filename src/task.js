@@ -5,9 +5,14 @@ const taskCreation = (description, dueDate, priority, status, project) => {
       description,
       dueDate,
       priority,
-      status
+      status,
+      edit(description, dueDate, priority, status){
+        this.description = description;
+        this.dueDate = dueDate;
+        this.priority = priority;
+        this.status = status;
+      }
     });
-
 };
 
 const newTaskForm = document.getElementById('task-form');
