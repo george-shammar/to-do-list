@@ -155,11 +155,12 @@ const showTask = () => {
     showContainer.appendChild(iconContainer);
 
 
+    const editIconContainer = document.createElement('div');
+    const editIcon = document.createElement('i');
+    editIcon.setAttribute('class','fas fa-pencil-alt color-green px-2');
+    editIconContainer.appendChild(editIcon);
+    iconContainer.appendChild(editIconContainer);
 }
 
 
 export default newProject;
-
-
-
-
