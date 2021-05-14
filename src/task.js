@@ -55,14 +55,30 @@ const task = (projectId) => {
   const submitTaskButton = document.getElementById('submit-task');
 
   submitTaskButton.onclick = () => {
-      taskCreation('my description', '24/032/21','hight',project);
-      newTaskForm.style.display = 'none';
+     //retrieve value from form input
+    const descriptionTask = document.getElementById('exampleInputDescription').value;
+    const dueDateTask = document.getElementById('exampleInputDueDate').value;
+    let priority;
+    if(document.querySelector('#high').checked){
+      priority = high;
+    }
 
+    if(document.querySelector('#medium').checked){
+      priority = high;
+    }
+
+    if(document.querySelector('#low').checked){
+      priority = high;
+    }
+
+      taskCreation(descriptionTask,dueDateTask,priority,project);
+      newTaskForm.style.display = 'none';
 
 // display task=====================================================
    project.todos.forEach(task => {
     const showContainer = document.createElement('div');
     showContainer.setAttribute('class', 'show-task mt-3 pt-1 px-2 mx-2 d-flex');
+
     taskDiv.appendChild(showContainer);
     
     const radioTask = document.createElement('div');
@@ -92,7 +108,7 @@ const task = (projectId) => {
     const taskDueDate = document.createElement('div');
     taskDueDate.setAttribute('class', 'color-white px-2');
     const taskDueDateParagraph = document.createElement('p');
-    const taskDueDateText = document.createTextNode(`Due Date: ${task.dueDate}`);
+    const taskDueDateText = document.createTextNode('Due Date: ' + task.dueDate);
     taskDueDateParagraph.appendChild(taskDueDateText);
     taskDueDate.appendChild(taskDueDateParagraph);
 
@@ -112,6 +128,7 @@ const task = (projectId) => {
     thrashIconContainer.appendChild(thrashIcon);
     iconContainer.appendChild(thrashIconContainer);
     });
+    console.log(project.todos);
   };
 };
 
