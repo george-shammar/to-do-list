@@ -126,6 +126,21 @@ const showTask = () => {
 
     const radio = document.createElement('div');
     radio.setAttribute('class', 'radio color-green');
+
+    const taskTask = document.createElement('div');
+    taskTask.setAttribute('class', 'to-do color-white px-2');
+    const taskTaskParagraph = document.createElement('p');
+    const taskTaskText = document.createTextNode('First to-do task for this project');
+    taskTaskParagraph.appendChild(taskTaskText);
+    taskTask.appendChild(taskTaskParagraph);
+
+    radioTask.appendChild(radio);
+    radioTask.appendChild(taskTask);
+
+    showContainer.appendChild(radioTask);
+
+
+    
 }
 
 
