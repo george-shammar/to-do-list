@@ -11,6 +11,10 @@ const projectsArray = [];
     submitButton.addEventListener('click', function removeForm() {
         projectForm.style.display = 'none';
     });
+    
+    // New task form display style: none
+    const newTaskForm = document.getElementById('task-form');
+    newTaskForm.style.display = 'none';
 
 const newProject = () => {
         newProjectButton.addEventListener('click', function form() {
@@ -93,7 +97,13 @@ const task = (projectId) => {
     const displayTaskForm = document.getElementById('new-task');
     displayTaskForm.onclick = () => {
     newTaskForm.style.display = 'block';
-}
+    }
+
+    const submitTaskButton = document.getElementById('submit-task');
+
+    submitTaskButton.onclick = () => {
+        newTaskForm.style.display = 'none';
+    };
 
 };
 
@@ -107,15 +117,9 @@ function myEvent(){
     }
 }
 
-// Display new task form
-const newTaskForm = document.getElementById('task-form');
-newTaskForm.style.display = 'none';
 
-const submitTaskButton = document.getElementById('submit-task');
 
-submitTaskButton.onclick = () => {
-    newTaskForm.style.display = 'none';
-};
+
 
 
 
