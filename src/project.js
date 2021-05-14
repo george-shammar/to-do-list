@@ -5,7 +5,11 @@ const projectCreation = (title, description) => {
    return {
      title,
      description,
-     todos: []
+     todos: [],
+     edit(title,description){
+        this.title = title;
+        this.description = description;
+      }
    };
 };
 
