@@ -36,7 +36,7 @@
 
 .show-task {
     border-radius: 5px;
-    border: 1px solid;
+    border: 1px solid rgb(96, 236, 96);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -48,4 +48,12 @@
     border-radius: 50%;
     border: 1px solid;
     cursor: pointer;
+}
+
+.to-do {
+    font-size: 1rem;
+}
+
+.icons {
+    font-size: 1rem;
 }

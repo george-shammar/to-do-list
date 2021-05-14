@@ -170,7 +170,7 @@ const task = (projectId) => {
         newTaskForm.style.display = 'none';
 
 
-// display task
+// display task=====================================================
     const showContainer = document.createElement('div');
     showContainer.setAttribute('class', 'show-task mt-3 pt-1 px-2 mx-2 d-flex');
     taskDiv.appendChild(showContainer);
@@ -179,11 +179,11 @@ const task = (projectId) => {
     radioTask.setAttribute('class', 'd-flex');
 
     const radio = document.createElement('div');
-    radio.setAttribute('class', 'radio color-green mt-2');
+    radio.setAttribute('class', 'radio color-green mt-1');
 
 
     const taskTask = document.createElement('div');
-    taskTask.setAttribute('class', 'to-do color-white px-2');
+    taskTask.setAttribute('class', 'to-do color-white px-2 pt-1');
     const taskTaskParagraph = document.createElement('p');
     const taskTaskText = document.createTextNode('First to-do task for this project');
     taskTaskParagraph.appendChild(taskTaskText);
@@ -197,10 +197,10 @@ const task = (projectId) => {
 
     // create icons
     const iconContainer = document.createElement('div');
-    iconContainer.setAttribute('class', 'd-flex');
+    iconContainer.setAttribute('class', 'd-flex icons pt-1');
 
     const taskDueDate = document.createElement('div');
-    taskDueDate.setAttribute('class', 'color-blue px-2');
+    taskDueDate.setAttribute('class', 'color-white px-2');
     const taskDueDateParagraph = document.createElement('p');
     const taskDueDateText = document.createTextNode('Due Date:13/10');
     taskDueDateParagraph.appendChild(taskDueDateText);
