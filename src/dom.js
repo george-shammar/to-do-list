@@ -88,6 +88,13 @@ const task = (projectId) => {
     const newTaskText = document.createTextNode('Add A New "To-Do"');
     newTaskButton.appendChild(newTaskText);
     taskContainer.appendChild(newTaskButton);
+
+    // display new task form
+    const displayTaskForm = document.getElementById('new-task');
+    displayTaskForm.onclick = () => {
+    newTaskForm.style.display = 'block';
+}
+
 };
 
 function myEvent(){
@@ -102,6 +109,7 @@ function myEvent(){
 
 // Display new task form
 const newTaskForm = document.getElementById('task-form');
+newTaskForm.style.display = 'none';
 
 const submitTaskButton = document.getElementById('submit-task');
 
@@ -109,10 +117,6 @@ submitTaskButton.onclick = () => {
     newTaskForm.style.display = 'none';
 };
 
-// const displayTaskForm = document.getElementById('new-task');
-//     displayTaskForm.onclick = () => {
-//     newTaskForm.style.display = 'block';
-// }
 
 
 export default newProject;
