@@ -119,7 +119,13 @@ function myEvent(){
 
 const showTask = () => {
     const showContainer = document.createElement('div');
-    showContainer.setAttribute('class', 'show-task mt-3 pt-3 px-2 mx-2 d-flex')
+    showContainer.setAttribute('class', 'show-task mt-3 pt-3 px-2 mx-2 d-flex');
+
+    const radioTask = document.createElement('div');
+    radioTask.setAttribute('class', 'd-flex');
+
+    const radio = document.createElement('div');
+    radio.setAttribute('class', 'radio color-green');
 }
 
 
