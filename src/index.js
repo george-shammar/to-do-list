@@ -1,4 +1,4 @@
 import './style.css';
-import newProject from './dom';
+import {newProject} from './project';
 
 newProject();
