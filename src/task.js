@@ -10,10 +10,6 @@ const taskCreation = (description, dueDate, priority, status, project) => {
 
 };
 
-// const taskDiv = document.createElement('div');
-// taskDiv.setAttribute('class', 'color-white px-4 pt-5 bold-text');
-
-
 const newTaskForm = document.getElementById('task-form');
 newTaskForm.style.display = 'none';
 
@@ -51,7 +47,7 @@ const task = (projectId) => {
   const displayTaskForm = document.getElementById('new-task');
   displayTaskForm.onclick = () => {
   newTaskForm.style.display = 'block';
-  }
+  };
 
   const submitTaskButton = document.getElementById('submit-task');
 
@@ -112,7 +108,7 @@ const task = (projectId) => {
   thrashIconContainer.appendChild(thrashIcon);
   iconContainer.appendChild(thrashIconContainer);
        
-  }
+  };
 };
 
 
