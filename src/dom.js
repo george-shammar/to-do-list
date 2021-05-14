@@ -65,6 +65,71 @@ const displayTask = (projectId) => {
     });
 };
 
+
+
+// const showTask = () => {
+//     const taskDiv = document.createElement('div');
+//     taskDiv.setAttribute('class', 'color-white px-4 pt-5 bold-text');
+   
+
+//     const showContainer = document.createElement('div');
+//     showContainer.setAttribute('class', 'show-task mt-3 pt-3 px-2 mx-2 d-flex');
+//     taskDiv.appendChild(showContainer);
+    
+//     const radioTask = document.createElement('div');
+//     radioTask.setAttribute('class', 'd-flex');
+
+//     const radio = document.createElement('div');
+//     radio.setAttribute('class', 'radio color-green');
+
+//     const taskTask = document.createElement('div');
+//     taskTask.setAttribute('class', 'to-do color-white px-2');
+//     const taskTaskParagraph = document.createElement('p');
+//     const taskTaskText = document.createTextNode('First to-do task for this project');
+//     taskTaskParagraph.appendChild(taskTaskText);
+//     taskTask.appendChild(taskTaskParagraph);
+
+//     radioTask.appendChild(radio);
+//     radioTask.appendChild(taskTask);
+
+//     showContainer.appendChild(radioTask);
+
+
+//     // create icons
+//     const iconContainer = document.createElement('div');
+//     iconContainer.setAttribute('class', 'd-flex');
+
+//     const taskDueDate = document.createElement('div');
+//     taskDueDate.setAttribute('class', 'color-blue px-2');
+//     const taskDueDateParagraph = document.createElement('p');
+//     const taskDueDateText = document.createTextNode('Due Date:13/10');
+//     taskDueDateParagraph.appendChild(taskDueDateText);
+//     taskDueDate.appendChild(taskDueDateParagraph);
+
+//     iconContainer.appendChild(taskDueDate);
+//     showContainer.appendChild(iconContainer);
+
+
+//     const editIconContainer = document.createElement('div');
+//     const editIcon = document.createElement('i');
+//     editIcon.setAttribute('class','fas fa-pencil-alt color-green px-2');
+//     editIconContainer.appendChild(editIcon);
+//     iconContainer.appendChild(editIconContainer);
+
+//     const thrashIconContainer = document.createElement('div');
+//     const thrashIcon = document.createElement('i');
+//     thrashIcon.setAttribute('class', 'fas fa-trash-alt color-green px-2');
+//     thrashIconContainer.appendChild(thrashIcon);
+//     iconContainer.appendChild(thrashIconContainer);
+
+
+// }
+
+
+
+
+
+
 const task = (projectId) => {
     document.querySelector('#task-container').innerHTML = '';
     let project = projectsArray[projectId];
@@ -103,24 +168,13 @@ const task = (projectId) => {
 
     submitTaskButton.onclick = () => {
         newTaskForm.style.display = 'none';
-    };
 
-};
 
-function myEvent(){
-    let projectsDiv = document.getElementsByClassName('project-div');
-
-    for(let i = 0; i<projectsDiv.length; i++){
-        projectsDiv[i].addEventListener('click', function(){
-            displayTask(this.id);
-        });
-    }
-}
-
-const showTask = () => {
+        // display task
     const showContainer = document.createElement('div');
     showContainer.setAttribute('class', 'show-task mt-3 pt-3 px-2 mx-2 d-flex');
-
+    taskDiv.appendChild(showContainer);
+    
     const radioTask = document.createElement('div');
     radioTask.setAttribute('class', 'd-flex');
 
@@ -166,7 +220,21 @@ const showTask = () => {
     thrashIcon.setAttribute('class', 'fas fa-trash-alt color-green px-2');
     thrashIconContainer.appendChild(thrashIcon);
     iconContainer.appendChild(thrashIconContainer);
+    }
 
+};
+
+
+
+
+function myEvent(){
+    let projectsDiv = document.getElementsByClassName('project-div');
+
+    for(let i = 0; i<projectsDiv.length; i++){
+        projectsDiv[i].addEventListener('click', function(){
+            displayTask(this.id);
+        });
+    }
 }
 
 
