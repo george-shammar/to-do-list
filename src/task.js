@@ -29,6 +29,7 @@ const task = (projectId) => {
 
     const taskDiv = document.createElement('div');
     taskDiv.setAttribute('class', 'color-white px-4 pt-5 bold-text');
+    
 
   taskDiv.appendChild(taskTitleParagraph);
   taskDiv.appendChild(taskDescriptionParagraph);
@@ -75,11 +76,15 @@ const task = (projectId) => {
       newTaskForm.style.display = 'none';
 
 // display task=====================================================
+  let i = 0;
+  document.querySelector('#task-div').innerHTML = '';
+
    project.todos.forEach(task => {
     const showContainer = document.createElement('div');
     showContainer.setAttribute('class', 'show-task mt-3 pt-1 px-2 mx-2 d-flex');
 
-    taskDiv.appendChild(showContainer);
+    const newTaskDiv = document.getElementById('task-div');
+    newTaskDiv.appendChild(showContainer);
     
     const radioTask = document.createElement('div');
     radioTask.setAttribute('class', 'd-flex');
@@ -127,8 +132,9 @@ const task = (projectId) => {
     thrashIcon.setAttribute('class', 'fas fa-trash-alt color-green px-2');
     thrashIconContainer.appendChild(thrashIcon);
     iconContainer.appendChild(thrashIconContainer);
+    i++;
     });
-    console.log(project.todos);
+   
   };
 };
 
