@@ -132,6 +132,7 @@ const task = (projectId) => {
     thrashIcon.setAttribute('class', 'fas fa-trash-alt color-green px-2');
     thrashIconContainer.appendChild(thrashIcon);
     iconContainer.appendChild(thrashIconContainer);
+
     i++;
     });
    
@@ -140,7 +141,9 @@ const task = (projectId) => {
 
 
 
+const deleteTask = () => {
 
+}
 
 
 
