@@ -65,17 +65,23 @@ const task = (projectId) => {
     }
 
     if(document.querySelector('#medium').checked){
-      priority = high;
+      priority = medium;
     }
 
     if(document.querySelector('#low').checked){
-      priority = high;
+      priority = low;
     }
 
       taskCreation(descriptionTask,dueDateTask,priority,project);
       newTaskForm.style.display = 'none';
 
-// display task=====================================================
+    showTask()
+   
+  };
+};
+
+const showTask = () => {
+  // display task=====================================================
   let i = 0;
   document.querySelector('#task-div').innerHTML = '';
 
@@ -135,8 +141,6 @@ const task = (projectId) => {
 
     i++;
     });
-   
-  };
 };
 
 
