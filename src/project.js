@@ -1,4 +1,4 @@
-import task from './task';
+import { task, showTask } from './task';
 
 
 const projectCreation = (title, description) => {
