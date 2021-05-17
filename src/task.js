@@ -126,10 +126,11 @@ const showTask = (project) => {
     iconContainer.appendChild(taskDueDate);
     showContainer.appendChild(iconContainer);
 
-
+    // Edit icon
     const editIconContainer = document.createElement('div');
     const editIcon = document.createElement('i');
     editIcon.setAttribute('class','fas fa-pencil-alt color-green px-2');
+    editIcon.setAttribute('id', 'pencil-task');
     editIconContainer.appendChild(editIcon);
     iconContainer.appendChild(editIconContainer);
 
@@ -139,6 +140,67 @@ const showTask = (project) => {
     thrashIconContainer.appendChild(thrashIcon);
     iconContainer.appendChild(thrashIconContainer);
 
+    // create DOM for edit===============================================
+
+    const editDomContainer = document.createElement('div');
+    editDomContainer.setAttribute('class', 'd-flex color-white dom-task mt-3 pt-1 px-2 mx-2');
+    editDomContainer.setAttribute('id', 'dom-listener');
+    
+
+
+
+    const descInputDiv = document.createElement('div');
+    descInputDiv.setAttribute('class', 'px-2 py-2');
+
+    const descInput = document.createElement('input');
+    descInput.setAttribute('class', 'form-control');
+    descInput.setAttribute('type', 'text');
+    descInput.setAttribute('id', 'dom-description');
+    descInput.setAttribute('placeholder', task.description);
+
+    descInputDiv.appendChild(descInput);
+    editDomContainer.appendChild(descInputDiv);
+
+    const dateDiv = document.createElement('div');
+    dateDiv.setAttribute('class', 'd-flex');
+    const dateInput = document.createElement('input');
+    dateInput.setAttribute('class', 'form-control');
+    dateInput.setAttribute('type', 'date');
+    dateInput.setAttribute('id', 'dom-date');
+    dateInput.setAttribute('placeholder', task.dueDate);
+
+   const editSubmit = document.createElement('div');
+   editSubmit.setAttribute('class', 'px-2 btn mx-1 btn-success my-1');
+   const submitText = document.createTextNode('Submit');
+   editSubmit.appendChild(submitText);
+
+   const editCancel = document.createElement('div');
+   editCancel.setAttribute('class', 'px-2 mx-1 btn btn-warning my-1');
+   const cancelText = document.createTextNode('Cancel');
+   editCancel.appendChild(cancelText);
+
+   dateDiv.appendChild(editSubmit);
+    dateDiv.appendChild(editCancel);
+   dateDiv.appendChild(dateInput);
+   editDomContainer.appendChild(dateDiv);
+
+   newTaskDiv.appendChild(editDomContainer);
+
+  
+
+  //  edit button event listener
+  
+  
+  const domListener = document.getElementById('dom-listener');
+  domListener.style.display='none';
+
+  const pencilEdit = document.getElementById('pencil-task');
+  pencilEdit.onclick = () => {
+    domListener.style.display='block';
+  }
+  
+
+    
     i++;
     });
 };
