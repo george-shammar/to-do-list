@@ -75,12 +75,12 @@ const task = (projectId) => {
       taskCreation(descriptionTask,dueDateTask,priority,project);
       newTaskForm.style.display = 'none';
 
-    showTask()
+    showTask(project);
    
   };
 };
 
-const showTask = () => {
+const showTask = (project) => {
   // display task=====================================================
   let i = 0;
   document.querySelector('#task-div').innerHTML = '';

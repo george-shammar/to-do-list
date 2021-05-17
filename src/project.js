@@ -62,6 +62,7 @@ const displayProjectTitle = () => {
     i++;
   });
   myEvent();
+  showTask();
 };
 
 const submit = () => {
