@@ -80,6 +80,7 @@ const task = (projectId) => {
   };
 };
 
+
 const showTask = (project) => {
   // display task=====================================================
   let i = 0;
@@ -145,8 +146,6 @@ const showTask = (project) => {
     const editDomContainer = document.createElement('div');
     editDomContainer.setAttribute('class', 'd-flex color-white dom-task mt-3 pt-1 px-2 mx-2');
     editDomContainer.setAttribute('id', 'dom-listener');
-    
-
 
 
     const descInputDiv = document.createElement('div');
@@ -186,30 +185,25 @@ const showTask = (project) => {
 
    newTaskDiv.appendChild(editDomContainer);
 
-  
-
-  //  edit button event listener
-  
-  
   const domListener = document.getElementById('dom-listener');
-  domListener.style.display='none';
+  domListener.style.display = 'none';
+  //  edit button event listener
 
-  const pencilEdit = document.getElementById('pencil-task');
-  pencilEdit.onclick = () => {
-    domListener.style.display='block';
-  }
+    const pencilEdit = document.getElementById('pencil-task');
+    pencilEdit.onclick = () => {
+      domListener.style.display = 'block';
+      alert('hi');
+    };
   
-
-    
     i++;
-    });
+   });
 };
 
 
 
 const deleteTask = () => {
 
-}
+};
 
 
 
