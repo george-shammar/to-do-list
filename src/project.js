@@ -32,6 +32,7 @@ const displayTask = (projectId) => {
 
   projectWithTask.addEventListener('click', function(){
       task(projectId);
+      showTask(projectsArray[projectId]);
   });
 };
 
@@ -62,7 +63,6 @@ const displayProjectTitle = () => {
     i++;
   });
   myEvent();
-  showTask();
 };
 
 const submit = () => {
