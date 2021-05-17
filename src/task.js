@@ -151,4 +151,4 @@ const deleteTask = () => {
 
 
 
-export default task;
+export { task, showTask };
