@@ -168,6 +168,7 @@ const showTask = (project) => {
 
    const editSubmit = document.createElement('div');
    editSubmit.setAttribute('class', 'px-2 btn mx-1 btn-success my-1');
+   editSubmit.setAttribute('id', 'submit-edit');
    const submitText = document.createTextNode('Submit');
    editSubmit.appendChild(submitText);
 
@@ -188,18 +189,48 @@ const showTask = (project) => {
    domListener.appendChild(editDomContainer);
 
   //  edit button event listener
- 
   domListener.style.display='none';
 
   const pencilEdit = document.getElementById('pencil-task');
   pencilEdit.onclick = () => {
     domListener.style.display='block';
   }
-  
+
+  // cancel button
 const cancelButton = document.getElementById('cancel-button');
 cancelButton.onclick = () => {
   domListener.style.display='none';
 }    
+
+// submit edit button
+const submitButton = document.getElementById('submit-edit');
+submitButton.onclick = () => {
+  
+
+  const descriptionEditTask = document.getElementById('dom-description').value;
+    const dueDateEditTask = document.getElementById('dom-date').value;
+    let priority;
+    if(document.querySelector('#high').checked){
+      priority = high;
+    }
+
+    if(document.querySelector('#medium').checked){
+      priority = medium;
+    }
+
+    if(document.querySelector('#low').checked){
+      priority = low;
+    }
+
+      taskCreation(descriptionEditTask,dueDateEditTask,priority,project);
+      domListener.style.display='none';
+
+    showTask(project);
+   
+  
+}
+
+
 
 
 
@@ -208,10 +239,6 @@ cancelButton.onclick = () => {
 };
 
 
-
-const deleteTask = () => {
-
-}
 
 
 
