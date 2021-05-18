@@ -134,12 +134,19 @@ const showTask = (project) => {
     editIconContainer.appendChild(editIcon);
     iconContainer.appendChild(editIconContainer);
 
+    // delete icon
     const thrashIconContainer = document.createElement('div');
     const thrashIcon = document.createElement('i');
     thrashIcon.setAttribute('class', 'fas fa-trash-alt color-green px-2');
     thrashIconContainer.appendChild(thrashIcon);
     iconContainer.appendChild(thrashIconContainer);
 
+    // delete functionality
+    thrashIconContainer.id = i
+    thrashIconContainer.addEventListener('click', () => {
+      project.todos.splice(thrashIconContainer.id, 1);
+      showTask(project);
+    });
     // create DOM for edit===============================================
 
     const editDomContainer = document.createElement('div');
