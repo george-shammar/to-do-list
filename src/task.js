@@ -144,11 +144,8 @@ const showTask = (project) => {
 
     const editDomContainer = document.createElement('div');
     editDomContainer.setAttribute('class', 'd-flex color-white dom-task mt-3 pt-1 px-2 mx-2');
-    editDomContainer.setAttribute('id', 'dom-listener');
+  
     
-
-
-
     const descInputDiv = document.createElement('div');
     descInputDiv.setAttribute('class', 'px-2 py-2');
 
@@ -176,6 +173,7 @@ const showTask = (project) => {
 
    const editCancel = document.createElement('div');
    editCancel.setAttribute('class', 'px-2 mx-1 btn btn-warning my-1');
+   editCancel.setAttribute('id', 'cancel-button');
    const cancelText = document.createTextNode('Cancel');
    editCancel.appendChild(cancelText);
 
@@ -184,14 +182,13 @@ const showTask = (project) => {
    dateDiv.appendChild(dateInput);
    editDomContainer.appendChild(dateDiv);
 
-   newTaskDiv.appendChild(editDomContainer);
+   const domListener = document.getElementById('edit-div');
 
-  
+   
+   domListener.appendChild(editDomContainer);
 
   //  edit button event listener
-  
-  
-  const domListener = document.getElementById('dom-listener');
+ 
   domListener.style.display='none';
 
   const pencilEdit = document.getElementById('pencil-task');
@@ -199,8 +196,13 @@ const showTask = (project) => {
     domListener.style.display='block';
   }
   
+const cancelButton = document.getElementById('cancel-button');
+cancelButton.onclick = () => {
+  domListener.style.display='none';
+}    
 
-    
+
+
     i++;
     });
 };
