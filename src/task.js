@@ -108,11 +108,14 @@ const showTask = (project) => {
 
     // status=============
     radio.id = i;
+    const statusComplete = () => {
     radio.addEventListener('click', () => {
       radio.style.backgroundColor='rgb(96, 236, 96)';
       taskTaskParagraph.style.textDecoration='line-through';
     });
-
+  }
+  statusComplete();
+   
     radioTask.appendChild(radio);
     radioTask.appendChild(taskTask);
 
