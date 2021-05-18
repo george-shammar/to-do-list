@@ -112,10 +112,13 @@ const showTask = (project) => {
     radio.addEventListener('click', () => {
       radio.style.backgroundColor='rgb(96, 236, 96)';
       taskTaskParagraph.style.textDecoration='line-through';
+      
     });
   }
+
   statusComplete();
-   
+
+
     radioTask.appendChild(radio);
     radioTask.appendChild(taskTask);
 
@@ -151,7 +154,7 @@ const showTask = (project) => {
     thrashIconContainer.appendChild(thrashIcon);
     iconContainer.appendChild(thrashIconContainer);
 
-    // delete functionality
+    // delete functionality==========================
     thrashIconContainer.id = i
     thrashIconContainer.addEventListener('click', () => {
       project.todos.splice(thrashIconContainer.id, 1);
@@ -162,7 +165,7 @@ const showTask = (project) => {
 
     const editDomContainer = document.createElement('div');
     editDomContainer.setAttribute('class', 'd-flex color-white dom-task mt-3 pt-1 px-2 mx-2');
-    
+    editDomContainer.id = i;
     
     const descInputDiv = document.createElement('div');
     descInputDiv.setAttribute('class', 'px-2 py-2');
@@ -201,37 +204,38 @@ const showTask = (project) => {
    dateDiv.appendChild(dateInput);
    editDomContainer.appendChild(dateDiv);
 
-   const domListener = document.getElementById('edit-div');
+  //  const domListener = document.getElementById('edit-div');
 
    
-   domListener.appendChild(editDomContainer);
+  //  domListener.appendChild(editDomContainer);
+   showContainer.appendChild(editDomContainer);
    
   //  edit button event listener
-  domListener.style.display='none';
+  editDomContainer.style.display='none';
 
   const pencilEdit = document.getElementById('pencil-task');
   pencilEdit.onclick = () => {
-    domListener.style.display='block';
+    editDomContainer.style.display='block';
   }
 
   // cancel button
 const cancelButton = document.getElementById('cancel-button');
 cancelButton.onclick = () => {
-  domListener.style.display='none';
+  editDomContainer.style.display='none';
 }    
 
 // submit edit button
-const submitButton = document.getElementById('submit-edit');
-// submitButton.id = i
+// const submitButton = document.getElementById('submit-edit');
+submitButton.id = i
 submitButton.onclick = () => {
   
 
-  // const descriptionEditTask = document.getElementById('dom-description').value;
-  // const dueDateEditTask = document.getElementById('dom-date').value;
-    
-  // project.todos[this.id].push(descriptionEditTask);
-  // project.todos[this.id].push(dueDateEditTask);
+  const descriptionEditTask = document.getElementById('dom-description').value;
+  const dueDateEditTask = document.getElementById('dom-date').value;
+  
+  project.todos[thrashIconContainer.id].edit(descriptionEditTask, dueDateEditTask, 'High');
   domListener.style.display='none';
+  showTask(project);
 }
 
 
