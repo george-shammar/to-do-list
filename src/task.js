@@ -98,13 +98,20 @@ const showTask = (project) => {
     const radio = document.createElement('div');
     radio.setAttribute('class', 'radio color-green mt-1');
 
-
     const taskTask = document.createElement('div');
     taskTask.setAttribute('class', 'to-do color-white px-2 pt-1');
     const taskTaskParagraph = document.createElement('p');
     const taskTaskText = document.createTextNode(task.description);
     taskTaskParagraph.appendChild(taskTaskText);
     taskTask.appendChild(taskTaskParagraph);
+
+
+    // status=============
+    radio.id = i;
+    radio.addEventListener('click', () => {
+      radio.style.backgroundColor='rgb(96, 236, 96)';
+      taskTaskParagraph.style.textDecoration='line-through';
+    });
 
     radioTask.appendChild(radio);
     radioTask.appendChild(taskTask);
@@ -147,11 +154,12 @@ const showTask = (project) => {
       project.todos.splice(thrashIconContainer.id, 1);
       showTask(project);
     });
+
     // create DOM for edit===============================================
 
     const editDomContainer = document.createElement('div');
     editDomContainer.setAttribute('class', 'd-flex color-white dom-task mt-3 pt-1 px-2 mx-2');
-  
+    
     
     const descInputDiv = document.createElement('div');
     descInputDiv.setAttribute('class', 'px-2 py-2');
@@ -194,7 +202,7 @@ const showTask = (project) => {
 
    
    domListener.appendChild(editDomContainer);
-
+   
   //  edit button event listener
   domListener.style.display='none';
 
@@ -211,33 +219,17 @@ cancelButton.onclick = () => {
 
 // submit edit button
 const submitButton = document.getElementById('submit-edit');
+// submitButton.id = i
 submitButton.onclick = () => {
   
 
-  const descriptionEditTask = document.getElementById('dom-description').value;
-    const dueDateEditTask = document.getElementById('dom-date').value;
-    let priority;
-    if(document.querySelector('#high').checked){
-      priority = high;
-    }
-
-    if(document.querySelector('#medium').checked){
-      priority = medium;
-    }
-
-    if(document.querySelector('#low').checked){
-      priority = low;
-    }
-
-      taskCreation(descriptionEditTask,dueDateEditTask,priority,project);
-      domListener.style.display='none';
-
-    showTask(project);
-   
-  
+  // const descriptionEditTask = document.getElementById('dom-description').value;
+  // const dueDateEditTask = document.getElementById('dom-date').value;
+    
+  // project.todos[this.id].push(descriptionEditTask);
+  // project.todos[this.id].push(dueDateEditTask);
+  domListener.style.display='none';
 }
-
-
 
 
 
