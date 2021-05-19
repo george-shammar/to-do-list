@@ -166,12 +166,13 @@ const showTask = (project) => {
     // create DOM for edit===============================================
 
     const editDomContainer = document.createElement('div');
-    editDomContainer.setAttribute('class', 'd-flex color-white dom-task px-2 mx-2');
-    editDomContainer.id = i;
+    editDomContainer.setAttribute('class', 'color-white dom-task px-2 mx-2');
+    editDomContainer.id = i.toString() + i.toString();
     showContainer.appendChild(editDomContainer);
 
+
   
-    editDomContainer.style.display = 'none';
+    document.getElementById(i.toString() + i.toString()).style.display = 'none';
    
     
     // edit functionality
