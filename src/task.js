@@ -145,7 +145,6 @@ const showTask = (project) => {
     const editIconContainer = document.createElement('div');
     const editIcon = document.createElement('i');
     editIcon.setAttribute('class','fas fa-pencil-alt color-green px-2');
-    // editIcon.setAttribute('id', 'pencil-task');
     editIconContainer.appendChild(editIcon);
     iconContainer.appendChild(editIconContainer);
 
