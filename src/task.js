@@ -233,10 +233,13 @@ const showTask = (project) => {
    const cancelText = document.createTextNode('Cancel');
    editCancel.appendChild(cancelText);
 
-   dateDiv.appendChild(editSubmit);
-    dateDiv.appendChild(editCancel);
+   
    dateDiv.appendChild(dateInput);
    editDomContainer.appendChild(dateDiv);
+   dateDiv.appendChild(editSubmit);
+   dateDiv.appendChild(editCancel);
+   
+  
 
     i++;
    });
