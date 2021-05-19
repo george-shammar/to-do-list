@@ -14,7 +14,21 @@ const projectCreation = (title, description) => {
 };
 
 var projectsArray = JSON.parse(localStorage.getItem('projectArray'));
-console.log('yeah');
+
+if (projectsArray == null) {
+  var defaultArray = [{
+     title: 'default',
+     description: 'default',
+     todos: [],
+     edit(title,description){
+        this.title = title;
+        this.description = description;
+      }
+   }];
+
+  localStorage.setItem('projectArray', JSON.stringify(defaultArray));
+  projectsArray = JSON.parse(localStorage.getItem('projectArray'))
+}
 
 const saveArray = () => {
   localStorage.setItem('projectArray', JSON.stringify(projectsArray));
