@@ -13,14 +13,11 @@ const projectCreation = (title, description) => {
    };
 };
 
-const projectsArray = [];
+var projectsArray = JSON.parse(localStorage.getItem('projectArray'));
+console.log('yeah');
 
 const saveArray = () => {
   localStorage.setItem('projectArray', JSON.stringify(projectsArray));
-};
-
-const retrieveArray = () => {
-  JSON.parse(localStorage.getItem(projectArray));
 };
 
 const newProjectButton = document.getElementById('new-project');
@@ -73,6 +70,7 @@ const displayProjectTitle = () => {
   myEvent();
 };
 
+
 const submit = () => {
     const projectTitle = document.querySelector('.title').value;
     const projectDescription = document.querySelector('.description').value;
@@ -95,6 +93,6 @@ const newProject = () => {
   formSubmit.addEventListener('click',  submit);
 };
 
+displayProjectTitle();
 
-export {projectCreation, newProject, saveArray, retrieveArray};
-export default projectsArray;
+export {projectCreation, newProject, saveArray, projectsArray };

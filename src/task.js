@@ -161,6 +161,7 @@ const showTask = (project) => {
     thrashIconContainer.addEventListener('click', () => {
       project.todos.splice(showContainer.id, 1);
       showTask(project);
+      saveArray();
     });
 
     // create DOM for edit===============================================
@@ -217,6 +218,7 @@ const showTask = (project) => {
       
     project.todos[showContainer.id].edit(descriptionEditTask, dueDateEditTask, 'High');
     showTask(project);
+    saveArray();
     };
 
    const submitText = document.createTextNode('Submit');
