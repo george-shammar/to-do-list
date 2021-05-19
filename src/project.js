@@ -15,6 +15,14 @@ const projectCreation = (title, description) => {
 
 const projectsArray = [];
 
+const saveArray = () => {
+  localStorage.setItem('projectArray', JSON.stringify(projectsArray));
+};
+
+const retrieveArray = () => {
+  JSON.parse(localStorage.getItem(projectArray));
+};
+
 const newProjectButton = document.getElementById('new-project');
 
     const projectForm=document.getElementById('project-form');
