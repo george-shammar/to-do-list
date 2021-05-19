@@ -83,6 +83,7 @@ const submit = () => {
     
     displayProjectTitle();
     displayTask();
+    saveArray();
 };
 
 const newProject = () => {
@@ -95,5 +96,5 @@ const newProject = () => {
 };
 
 
-export {projectCreation, newProject};
+export {projectCreation, newProject, saveArray, retrieveArray};
 export default projectsArray;

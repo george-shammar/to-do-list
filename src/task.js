@@ -1,4 +1,4 @@
-import projectsArray from './project';
+import { projectsArray, saveArray } from './project';
 
 const taskCreation = (description, dueDate, priority, project) => {
     project.todos.push({
@@ -76,7 +76,7 @@ const task = (projectId) => {
       newTaskForm.style.display = 'none';
 
     showTask(project);
-   
+    saveArray();
   };
 };
 
