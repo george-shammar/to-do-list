@@ -168,6 +168,10 @@ const showTask = (project) => {
     editDomContainer.setAttribute('class', 'd-flex color-white dom-task px-2 mx-2');
     editDomContainer.id = i;
     showContainer.appendChild(editDomContainer);
+
+  
+    editDomContainer.style.display = 'none';
+   
     
     // edit functionality
     editIconContainer.id = i
@@ -231,27 +235,6 @@ const showTask = (project) => {
     dateDiv.appendChild(editCancel);
    dateDiv.appendChild(dateInput);
    editDomContainer.appendChild(dateDiv);
-
-    // editDomContainer.style.display = 'none';
-   
-
- 
-
-
-// // const submitButton = document.getElementById('submit-edit');
-// submitButton.id = i
-// submitButton.onclick = () => {
-  
-
-//   const descriptionEditTask = document.getElementById('dom-description').value;
-//   const dueDateEditTask = document.getElementById('dom-date').value;
-  
-//   project.todos[thrashIconContainer.id].edit(descriptionEditTask, dueDateEditTask, 'High');
-//   domListener.style.display='none';
-//   showTask(project);
-// }
-
-
 
     i++;
     });
