@@ -5,6 +5,8 @@
 
 - Creating a project is as simple as filling out the new project form with the project's title and description. The project panel is enabled for editing and deleting projects as well. Each task has functionalities for adding due date, editing, and deleting specific tasks.
 
+![screenShot](./screenShotTaskIt.png)
+
 ## Built With
 - Javascript.
 - HTML.
