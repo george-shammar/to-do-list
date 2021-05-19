@@ -1,16 +1,16 @@
 import { projectsArray, saveArray } from './project';
 
 const taskCreation = (description, dueDate, priority, project) => {
-    project.todos.push({
-      description,
-      dueDate,
-      priority,
-      edit(description, dueDate, priority){
-        this.description = description;
-        this.dueDate = dueDate;
-        this.priority = priority;
-      }
-    });
+  project.todos.push({
+    description,
+    dueDate,
+    priority,
+    edit(description, dueDate, priority) {
+      this.description = description;
+      this.dueDate = dueDate;
+      this.priority = priority;
+    },
+  });
 };
 
 const newTaskForm = document.getElementById('task-form');
@@ -18,7 +18,7 @@ newTaskForm.style.display = 'none';
 
 const task = (projectId) => {
   document.querySelector('#task-container').innerHTML = '';
-  let project = projectsArray[projectId];
+  const project = projectsArray[projectId];
   const taskTitleParagraph = document.createElement('p');
   const taskTextTitle = document.createTextNode(`Project: ${project.title}`);
   taskTitleParagraph.appendChild(taskTextTitle);
@@ -27,14 +27,13 @@ const task = (projectId) => {
   const taskDescriptionText = document.createTextNode(`Description: ${project.description}`);
   taskDescriptionParagraph.appendChild(taskDescriptionText);
 
-    const taskDiv = document.createElement('div');
-    taskDiv.setAttribute('class', 'color-white px-4 pt-5 bold-text');
-    
+  const taskDiv = document.createElement('div');
+  taskDiv.setAttribute('class', 'color-white px-4 pt-5 bold-text');
+
 
   taskDiv.appendChild(taskTitleParagraph);
   taskDiv.appendChild(taskDescriptionParagraph);
-  
-  
+
 
   const taskContainer = document.getElementById('task-container');
   taskContainer.appendChild(taskDiv);
@@ -50,30 +49,30 @@ const task = (projectId) => {
   // display new task form
   const displayTaskForm = document.getElementById('new-task');
   displayTaskForm.onclick = () => {
-  newTaskForm.style.display = 'block';
+    newTaskForm.style.display = 'block';
   };
 
   const submitTaskButton = document.getElementById('submit-task');
 
   submitTaskButton.onclick = () => {
-     //retrieve value from form input
+    // retrieve value from form input
     const descriptionTask = document.getElementById('exampleInputDescription').value;
     const dueDateTask = document.getElementById('exampleInputDueDate').value;
     let priority;
-    if(document.querySelector('#high').checked){
+    if (document.querySelector('#high').checked) {
       priority = high;
     }
 
-    if(document.querySelector('#medium').checked){
+    if (document.querySelector('#medium').checked) {
       priority = medium;
     }
 
-    if(document.querySelector('#low').checked){
+    if (document.querySelector('#low').checked) {
       priority = low;
     }
 
-      taskCreation(descriptionTask,dueDateTask,priority,project);
-      newTaskForm.style.display = 'none';
+    taskCreation(descriptionTask, dueDateTask, priority, project);
+    newTaskForm.style.display = 'none';
 
     showTask(project);
     saveArray();
@@ -86,14 +85,14 @@ const showTask = (project) => {
   let i = 0;
   document.querySelector('#task-div').innerHTML = '';
 
-   project.todos.forEach(task => {
+  project.todos.forEach(task => {
     const showContainer = document.createElement('div');
     showContainer.setAttribute('class', 'show-task mt-3 pt-1 px-2 mx-2 d-flex');
-    showContainer.id =i;
+    showContainer.id = i;
 
     const newTaskDiv = document.getElementById('task-div');
     newTaskDiv.appendChild(showContainer);
-    
+
     const radioTask = document.createElement('div');
     radioTask.setAttribute('class', 'd-flex');
 
@@ -111,14 +110,13 @@ const showTask = (project) => {
     // status=============
     radio.id = i;
     const statusComplete = () => {
-    radio.addEventListener('click', () => {
-      radio.style.backgroundColor='rgb(96, 236, 96)';
-      taskTaskParagraph.style.textDecoration='line-through';
-      
-    });
-  };
+      radio.addEventListener('click', () => {
+        radio.style.backgroundColor = 'rgb(96, 236, 96)';
+        taskTaskParagraph.style.textDecoration = 'line-through';
+      });
+    };
 
-  statusComplete();
+    statusComplete();
 
 
     radioTask.appendChild(radio);
@@ -134,7 +132,7 @@ const showTask = (project) => {
     const taskDueDate = document.createElement('div');
     taskDueDate.setAttribute('class', 'color-white px-2');
     const taskDueDateParagraph = document.createElement('p');
-    const taskDueDateText = document.createTextNode('Due Date: ' + task.dueDate);
+    const taskDueDateText = document.createTextNode(`Due Date: ${task.dueDate}`);
     taskDueDateParagraph.appendChild(taskDueDateText);
     taskDueDate.appendChild(taskDueDateParagraph);
 
@@ -144,7 +142,7 @@ const showTask = (project) => {
     // Edit icon
     const editIconContainer = document.createElement('div');
     const editIcon = document.createElement('i');
-    editIcon.setAttribute('class','fas fa-pencil-alt color-green px-2');
+    editIcon.setAttribute('class', 'fas fa-pencil-alt color-green px-2');
     editIconContainer.appendChild(editIcon);
     iconContainer.appendChild(editIconContainer);
 
@@ -171,25 +169,23 @@ const showTask = (project) => {
     showContainer.appendChild(editDomContainer);
 
 
-  
     document.getElementById(i.toString() + i.toString()).style.display = 'none';
-   
-    
+
+
     // edit functionality
     editIconContainer.id = i;
     editIconContainer.onclick = () => {
-      editDomContainer.style.display='block';
+      editDomContainer.style.display = 'block';
     };
 
     const descInputDiv = document.createElement('div');
     descInputDiv.setAttribute('class', 'px-2 py-2');
 
-  
 
     const descInput = document.createElement('input');
     descInput.setAttribute('class', 'form-control');
     descInput.setAttribute('type', 'text');
-    
+
     descInput.id = i;
 
     descInput.setAttribute('placeholder', task.description);
@@ -205,49 +201,44 @@ const showTask = (project) => {
     dateInput.id = i;
     dateInput.setAttribute('placeholder', task.dueDate);
 
-   const editSubmit = document.createElement('div');
-   editSubmit.setAttribute('class', 'px-2 btn mx-1 btn-success my-1');
-  
-  // submit edit button
-  editSubmit.id = i;
-  editSubmit.onclick = () => {
-   
-    const descriptionEditTask = descInput.value;
-    const dueDateEditTask = dateInput.value;
-      
-    project.todos[showContainer.id].edit(descriptionEditTask, dueDateEditTask, 'High');
-    showTask(project);
-    saveArray();
+    const editSubmit = document.createElement('div');
+    editSubmit.setAttribute('class', 'px-2 btn mx-1 btn-success my-1');
+
+    // submit edit button
+    editSubmit.id = i;
+    editSubmit.onclick = () => {
+      const descriptionEditTask = descInput.value;
+      const dueDateEditTask = dateInput.value;
+
+      project.todos[showContainer.id].edit(descriptionEditTask, dueDateEditTask, 'High');
+      showTask(project);
+      saveArray();
     };
 
-   const submitText = document.createTextNode('Submit');
-   editSubmit.appendChild(submitText);
+    const submitText = document.createTextNode('Submit');
+    editSubmit.appendChild(submitText);
 
-   const editCancel = document.createElement('div');
-   editCancel.setAttribute('class', 'px-2 mx-1 btn btn-warning my-1');
+    const editCancel = document.createElement('div');
+    editCancel.setAttribute('class', 'px-2 mx-1 btn btn-warning my-1');
 
     editCancel.id = i;
     editCancel.onclick = () => {
-      editDomContainer.style.display='none';
-    };    
-  
-   const cancelText = document.createTextNode('Cancel');
-   editCancel.appendChild(cancelText);
+      editDomContainer.style.display = 'none';
+    };
 
-   
-   dateDiv.appendChild(dateInput);
-   editDomContainer.appendChild(dateDiv);
-   dateDiv.appendChild(editSubmit);
-   dateDiv.appendChild(editCancel);
-   
-  
+    const cancelText = document.createTextNode('Cancel');
+    editCancel.appendChild(cancelText);
+
+
+    dateDiv.appendChild(dateInput);
+    editDomContainer.appendChild(dateDiv);
+    dateDiv.appendChild(editSubmit);
+    dateDiv.appendChild(editCancel);
+
 
     i++;
-   });
+  });
 };
-
-
-
 
 
 export { task, showTask };

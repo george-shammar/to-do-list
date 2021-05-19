@@ -1,30 +1,28 @@
 import { task, showTask } from './task';
 
 
-const projectCreation = (title, description) => {
-   return {
-     title,
-     description,
-     todos: [],
-     edit(title,description){
-        this.title = title;
-        this.description = description;
-      }
-   };
-};
+const projectCreation = (title, description) => ({
+  title,
+  description,
+  todos: [],
+  edit(title, description) {
+    this.title = title;
+    this.description = description;
+  },
+});
 
-var projectsArray = JSON.parse(localStorage.getItem('projectArray'));
+let projectsArray = JSON.parse(localStorage.getItem('projectArray'));
 
 if (projectsArray == null) {
-  var defaultArray = [{
-     title: 'default',
-     description: 'default',
-     todos: [],
-     edit(title,description){
-        this.title = title;
-        this.description = description;
-      }
-   }];
+  const defaultArray = [{
+    title: 'default',
+    description: 'default',
+    todos: [],
+    edit(title, description) {
+      this.title = title;
+      this.description = description;
+    },
+  }];
 
   localStorage.setItem('projectArray', JSON.stringify(defaultArray));
   projectsArray = JSON.parse(localStorage.getItem('projectArray'));
@@ -36,32 +34,32 @@ const saveArray = () => {
 
 const newProjectButton = document.getElementById('new-project');
 
-    const projectForm=document.getElementById('project-form');
-    projectForm.style.display = 'none';
+const projectForm = document.getElementById('project-form');
+projectForm.style.display = 'none';
 
 const submitButton = document.getElementById('submit');
 
-    submitButton.addEventListener('click', function removeForm() {
-        projectForm.style.display = 'none';
-    });
+submitButton.addEventListener('click', () => {
+  projectForm.style.display = 'none';
+});
 
 
 const displayTask = (projectId) => {
   const projectWithTask = document.getElementById(projectId);
 
-  projectWithTask.addEventListener('click', function(){
-      task(projectId);
-      showTask(projectsArray[projectId]);
+  projectWithTask.addEventListener('click', () => {
+    task(projectId);
+    showTask(projectsArray[projectId]);
   });
 };
 
-function myEvent(){
-  let projectsDiv = document.getElementsByClassName('project-div');
+function myEvent() {
+  const projectsDiv = document.getElementsByClassName('project-div');
 
-  for(let i = 0; i<projectsDiv.length; i++){
-      projectsDiv[i].addEventListener('click', function(){
-          displayTask(this.id);
-      });
+  for (let i = 0; i < projectsDiv.length; i++) {
+    projectsDiv[i].addEventListener('click', function () {
+      displayTask(this.id);
+    });
   }
 }
 
@@ -86,27 +84,29 @@ const displayProjectTitle = () => {
 
 
 const submit = () => {
-    const projectTitle = document.querySelector('.title').value;
-    const projectDescription = document.querySelector('.description').value;
+  const projectTitle = document.querySelector('.title').value;
+  const projectDescription = document.querySelector('.description').value;
 
-    // create new project
-    const newProject = projectCreation(projectTitle, projectDescription);
-    projectsArray.push(newProject);
-    
-    displayProjectTitle();
-    displayTask();
-    saveArray();
+  // create new project
+  const newProject = projectCreation(projectTitle, projectDescription);
+  projectsArray.push(newProject);
+
+  displayProjectTitle();
+  displayTask();
+  saveArray();
 };
 
 const newProject = () => {
-  newProjectButton.addEventListener('click', function form() {
+  newProjectButton.addEventListener('click', () => {
     projectForm.style.display = 'block';
-  });            
+  });
 
   const formSubmit = document.getElementById('submit');
-  formSubmit.addEventListener('click',  submit);
+  formSubmit.addEventListener('click', submit);
 };
 
 displayProjectTitle();
 
-export {projectCreation, newProject, saveArray, projectsArray };
+export {
+  projectCreation, newProject, saveArray, projectsArray,
+};
