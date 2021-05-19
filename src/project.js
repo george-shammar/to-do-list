@@ -1,4 +1,4 @@
-import { task, showTask } from './task';
+import { task, showTask } from './task'; // eslint-disable-line
 
 
 const projectCreation = (title, description) => ({
@@ -11,7 +11,7 @@ const projectCreation = (title, description) => ({
   },
 });
 
-let projectsArray = JSON.parse(localStorage.getItem('projectArray'));
+let projectsArray = JSON.parse(localStorage.getItem('projectArray')); // eslint-disable-line
 
 if (projectsArray == null) {
   const defaultArray = [{
@@ -56,8 +56,8 @@ const displayTask = (projectId) => {
 function myEvent() {
   const projectsDiv = document.getElementsByClassName('project-div');
 
-  for (let i = 0; i < projectsDiv.length; i++) {
-    projectsDiv[i].addEventListener('click', function () {
+  for (let i = 0; i < projectsDiv.length; i += 1) {
+    projectsDiv[i].addEventListener('click', function display() {
       displayTask(this.id);
     });
   }
@@ -77,7 +77,7 @@ const displayProjectTitle = () => {
 
     const projectContainer = document.getElementById('project-container');
     projectContainer.appendChild(projectDiv);
-    i++;
+    i += 1;
   });
   myEvent();
 };
