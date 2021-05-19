@@ -89,6 +89,7 @@ const showTask = (project) => {
    project.todos.forEach(task => {
     const showContainer = document.createElement('div');
     showContainer.setAttribute('class', 'show-task mt-3 pt-1 px-2 mx-2 d-flex');
+    showContainer.id =i;
 
     const newTaskDiv = document.getElementById('task-div');
     newTaskDiv.appendChild(showContainer);
@@ -99,13 +100,26 @@ const showTask = (project) => {
     const radio = document.createElement('div');
     radio.setAttribute('class', 'radio color-green mt-1');
 
-
     const taskTask = document.createElement('div');
     taskTask.setAttribute('class', 'to-do color-white px-2 pt-1');
     const taskTaskParagraph = document.createElement('p');
     const taskTaskText = document.createTextNode(task.description);
     taskTaskParagraph.appendChild(taskTaskText);
     taskTask.appendChild(taskTaskParagraph);
+
+
+    // status=============
+    radio.id = i;
+    const statusComplete = () => {
+    radio.addEventListener('click', () => {
+      radio.style.backgroundColor='rgb(96, 236, 96)';
+      taskTaskParagraph.style.textDecoration='line-through';
+      
+    });
+  };
+
+  statusComplete();
+
 
     radioTask.appendChild(radio);
     radioTask.appendChild(taskTask);
@@ -131,30 +145,52 @@ const showTask = (project) => {
     const editIconContainer = document.createElement('div');
     const editIcon = document.createElement('i');
     editIcon.setAttribute('class','fas fa-pencil-alt color-green px-2');
-    editIcon.setAttribute('id', 'pencil-task');
+    // editIcon.setAttribute('id', 'pencil-task');
     editIconContainer.appendChild(editIcon);
     iconContainer.appendChild(editIconContainer);
 
+
+    // delete icon
     const thrashIconContainer = document.createElement('div');
     const thrashIcon = document.createElement('i');
     thrashIcon.setAttribute('class', 'fas fa-trash-alt color-green px-2');
     thrashIconContainer.appendChild(thrashIcon);
     iconContainer.appendChild(thrashIconContainer);
 
+    // delete functionality==========================
+    thrashIconContainer.addEventListener('click', () => {
+      project.todos.splice(showContainer.id, 1);
+      showTask(project);
+    });
+
     // create DOM for edit===============================================
 
     const editDomContainer = document.createElement('div');
-    editDomContainer.setAttribute('class', 'd-flex color-white dom-task mt-3 pt-1 px-2 mx-2');
-    editDomContainer.setAttribute('id', 'dom-listener');
+    editDomContainer.setAttribute('class', 'd-flex color-white dom-task px-2 mx-2');
+    editDomContainer.id = i;
+    showContainer.appendChild(editDomContainer);
 
+  
+    editDomContainer.style.display = 'none';
+   
+    
+    // edit functionality
+    editIconContainer.id = i;
+    editIconContainer.onclick = () => {
+      editDomContainer.style.display='block';
+    };
 
     const descInputDiv = document.createElement('div');
     descInputDiv.setAttribute('class', 'px-2 py-2');
 
+  
+
     const descInput = document.createElement('input');
     descInput.setAttribute('class', 'form-control');
     descInput.setAttribute('type', 'text');
-    descInput.setAttribute('id', 'dom-description');
+    
+    descInput.id = i;
+
     descInput.setAttribute('placeholder', task.description);
 
     descInputDiv.appendChild(descInput);
@@ -165,16 +201,34 @@ const showTask = (project) => {
     const dateInput = document.createElement('input');
     dateInput.setAttribute('class', 'form-control');
     dateInput.setAttribute('type', 'date');
-    dateInput.setAttribute('id', 'dom-date');
+    dateInput.id = i;
     dateInput.setAttribute('placeholder', task.dueDate);
 
    const editSubmit = document.createElement('div');
    editSubmit.setAttribute('class', 'px-2 btn mx-1 btn-success my-1');
+  
+  // submit edit button
+  editSubmit.id = i;
+  editSubmit.onclick = () => {
+   
+    const descriptionEditTask = descInput.value;
+    const dueDateEditTask = dateInput.value;
+      
+    project.todos[showContainer.id].edit(descriptionEditTask, dueDateEditTask, 'High');
+    showTask(project);
+    };
+
    const submitText = document.createTextNode('Submit');
    editSubmit.appendChild(submitText);
 
    const editCancel = document.createElement('div');
    editCancel.setAttribute('class', 'px-2 mx-1 btn btn-warning my-1');
+
+    editCancel.id = i;
+    editCancel.onclick = () => {
+      editDomContainer.style.display='none';
+    };    
+  
    const cancelText = document.createTextNode('Cancel');
    editCancel.appendChild(cancelText);
 
@@ -183,27 +237,11 @@ const showTask = (project) => {
    dateDiv.appendChild(dateInput);
    editDomContainer.appendChild(dateDiv);
 
-   newTaskDiv.appendChild(editDomContainer);
-
-  const domListener = document.getElementById('dom-listener');
-  domListener.style.display = 'none';
-  //  edit button event listener
-
-    const pencilEdit = document.getElementById('pencil-task');
-    pencilEdit.onclick = () => {
-      domListener.style.display = 'block';
-      alert('hi');
-    };
-  
     i++;
    });
 };
 
 
-
-const deleteTask = () => {
-
-};
 
 
 

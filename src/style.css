@@ -1,12 +1,18 @@
+* { 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 .projects {
     width: 25%;
     background-color: rgb(19, 18, 18);
-    height: 100%;
+    height: 100vh;
 }
 
 .tasks {
     width: 75%;
     background-color: rgb(87, 85, 85);
+    height: 100vh;
 }
 
 .color-green {
@@ -75,6 +81,7 @@
 }
 
 .dom-task {
+
     border-radius: 5px;
     border: 1px solid rgb(96, 236, 96);
     display: flex;
