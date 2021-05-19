@@ -27,7 +27,7 @@ if (projectsArray == null) {
    }];
 
   localStorage.setItem('projectArray', JSON.stringify(defaultArray));
-  projectsArray = JSON.parse(localStorage.getItem('projectArray'))
+  projectsArray = JSON.parse(localStorage.getItem('projectArray'));
 }
 
 const saveArray = () => {
