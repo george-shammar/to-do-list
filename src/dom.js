@@ -1,7 +1,7 @@
-import { projectsArray, saveArray } from './project'; // eslint-disable-line
-import { task, showTask } from './task'; // eslint-disable-line
+import { projectsArray, saveArray, myEvent } from './project'; // eslint-disable-line
+import { task, showTask, taskCreation, newTaskForm } from './task'; // eslint-disable-line
 
-const myTask = (project) => {
+const myShowTask = (project) => {
   // display task=====================================================
   let i = 0;
   document.querySelector('#task-div').innerHTML = '';
@@ -161,5 +161,78 @@ const myTask = (project) => {
   });
 };
 
+
+const myTask = (projectId) => {
+  document.querySelector('#task-container').innerHTML = '';
+  const project = projectsArray[projectId];
+  const taskTitleParagraph = document.createElement('p');
+  const taskTextTitle = document.createTextNode(`Project: ${project.title}`);
+  taskTitleParagraph.appendChild(taskTextTitle);
+
+  const taskDescriptionParagraph = document.createElement('p');
+  const taskDescriptionText = document.createTextNode(`Description: ${project.description}`);
+  taskDescriptionParagraph.appendChild(taskDescriptionText);
+
+  const taskDiv = document.createElement('div');
+  taskDiv.setAttribute('class', 'color-white px-4 pt-5 bold-text');
+
+
+  taskDiv.appendChild(taskTitleParagraph);
+  taskDiv.appendChild(taskDescriptionParagraph);
+
+
+  const taskContainer = document.getElementById('task-container');
+  taskContainer.appendChild(taskDiv);
+
+  // Add task button
+  const newTaskButton = document.createElement('button');
+  newTaskButton.setAttribute('class', 'btn btn-success px-5 mx-4 my-3');
+  newTaskButton.setAttribute('id', 'new-task');
+  const newTaskText = document.createTextNode('Add A New "To-Do"');
+  newTaskButton.appendChild(newTaskText);
+  taskContainer.appendChild(newTaskButton);
+
+  // display new task form
+  const displayTaskForm = document.getElementById('new-task');
+  displayTaskForm.onclick = () => {
+    newTaskForm.style.display = 'block';
+  };
+
+  const submitTaskButton = document.getElementById('submit-task');
+
+  submitTaskButton.onclick = () => {
+    // retrieve value from form input
+    const descriptionTask = document.getElementById('exampleInputDescription').value;
+    const dueDateTask = document.getElementById('exampleInputDueDate').value;
+    let priority;
+
+
+    taskCreation(descriptionTask, dueDateTask, priority, project);
+    newTaskForm.style.display = 'none';
+
+    showTask(project);
+    saveArray();
+  };
+};
+
+const displayProjectTitle = () => {
+  let i = 0;
+  document.querySelector('#project-container').innerHTML = '';
+  projectsArray.forEach(project => {
+    const projectDiv = document.createElement('div');
+    projectDiv.setAttribute('class', 'color-white px-4 bolden show-project mx-4 pt-3 mb-2 project-div');
+    projectDiv.setAttribute('id', i);
+    const titleparagraph = document.createElement('p');
+    const titleText = document.createTextNode(`${project.title}`);
+    titleparagraph.appendChild(titleText);
+    projectDiv.appendChild(titleparagraph);
+
+    const projectContainer = document.getElementById('project-container');
+    projectContainer.appendChild(projectDiv);
+    i += 1;
+  });
+  myEvent();
+};
+
 // eslint-disable-next-line import/prefer-default-export
-export { myTask };
+export { myShowTask, myTask, displayProjectTitle };
