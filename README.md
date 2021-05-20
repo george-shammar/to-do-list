@@ -7,6 +7,8 @@
 
 ![screenShot](./screenShotTaskIt.png)
 
+## Live version
+![taskIT](https://george-shammar.github.io/to-do-list/)
 ## Built With
 - Javascript.
 - HTML.
