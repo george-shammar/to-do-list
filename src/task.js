@@ -1,12 +1,12 @@
 import { projectsArray, saveArray } from './project'; // eslint-disable-line
-import { myTask } from './dom';
+import { myTask } from './dom'; // eslint-disable-line
 
 const taskCreation = (description, dueDate, priority, project) => {
   project.todos.push({
     description,
     dueDate,
     priority,
-    edit: function(description, dueDate, priority) {
+    edit(description, dueDate, priority) {
       this.description = description;
       this.dueDate = dueDate;
       this.priority = priority;
