@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.projects {
+  width: 25%;
+  background-color: rgb(19, 18, 18);
+  height: 100vh;
+}
+
+.tasks {
+  width: 75%;
+  background-color: rgb(87, 85, 85);
+  height: 100vh;
+}
+
+.color-green {
+  color: rgb(96, 236, 96);
+}
+
+.color-white {
+  color: white;
+}
+
+.color-blue {
+  color: blue;
+}
+
+.project-div:hover {
+  background-color: rgb(87, 85, 85);
+  cursor: pointer;
+}
+
+.bold-text {
+  font-size: 2rem;
+}
+
+.bolden {
+  font-size: 1.5rem;
+}
+
+.show-task {
+  border-radius: 5px;
+  border: 1px solid rgb(96, 236, 96);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.show-project {
+  border-radius: 5px;
+  border: 1px solid rgb(96, 236, 96);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.radio {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid;
+  cursor: pointer;
+}
+
+.to-do {
+  font-size: 1rem;
+}
+
+.icons {
+  font-size: 1rem;
+}
+
+.fa-pencil-alt {
+  cursor: pointer;
+}
+
+.fa-trash-alt {
+  cursor: pointer;
+}
+
+.dom-task {
+  border-radius: 5px;
+  border: 1px solid rgb(96, 236, 96);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

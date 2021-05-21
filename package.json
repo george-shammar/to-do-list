@@ -1,0 +1,38 @@
+{
+  "name": "to-do-list",
+  "version": "1.0.0",
+  "description": "A To-do list for task and time management created with Javascript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development",
+    "watch": "webpack --watch",
+    "build": "webpack --mode production",
+    "start": "webpack serve --mode development --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/george-shammar/to-do-list.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/george-shammar/to-do-list/issues"
+  },
+  "homepage": "https://github.com/george-shammar/to-do-list#readme",
+  "devDependencies": {
+    "babel-eslint": "10.1.x",
+    "css-loader": "^5.2.4",
+    "eslint": "6.8.x",
+    "eslint-config-airbnb-base": "14.1.x",
+    "eslint-plugin-import": "2.20.x",
+    "style-loader": "^2.0.0",
+    "stylelint": "13.3.x",
+    "stylelint-config-standard": "20.0.x",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "3.17.x",
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
