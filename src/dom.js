@@ -227,6 +227,22 @@ const displayProjectTitle = () => {
     titleparagraph.appendChild(titleText);
     projectDiv.appendChild(titleparagraph);
 
+    // delete icon
+    const thrashContainer = document.createElement('div');
+    const thrashProjectIcon = document.createElement('i');
+    thrashProjectIcon.setAttribute('class', 'fas fa-trash-alt color-green px-2');
+    thrashContainer.appendChild(thrashProjectIcon);
+    projectDiv.appendChild(thrashContainer);
+
+    // delete functionality==========================
+    thrashContainer.addEventListener('click', () => {
+      projectsArray.splice(projectDiv.id, 1);
+      // showTask(project);
+      // saveArray();
+      displayProjectTitle();
+    });
+
+
     const projectContainer = document.getElementById('project-container');
     projectContainer.appendChild(projectDiv);
     i += 1;
