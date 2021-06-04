@@ -94,5 +94,3 @@ displayProjectTitle();
 export {
   projectCreation, newProject, saveArray, projectsArray, myEvent,
 };
-
-module.exports = projectCreation;
