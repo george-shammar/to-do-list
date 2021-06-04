@@ -37,3 +37,8 @@ test('Should set the priority to be equal to the third parameter received', () =
     const task = taskCreation('task description', '12/03/2021', 'high', newProject);
   expect(newProject.todos[0].priority).toBe('high');    
 });
+
+test('Priority shoud not be empty', () => {
+    const task = taskCreation('task description', '12/03/2021', 'high', newProject);
+  expect(newProject.todos[0].priority).not.toBe(null);    
+});
