@@ -1,6 +1,5 @@
 const projectCreation = require('../project');
 
-
 test('should set the title to be equal to the first parameter received', () => {
   const project = projectCreation('First project', 'This is a project');
   expect(project.title).toBe('First project');
