@@ -51,3 +51,8 @@ test('Edited task should not be equal --task description--', () => {
     newProject.todos[0].edit('edited description', '12/03/2021', 'high');
     expect(newProject.todos[0].description).not.toBe('task description');    
 });
+
+test('Should edit the task dueDate', () => {
+    newProject.todos[0].edit('edited description', '12/03/2023', 'high');
+    expect(newProject.todos[0].dueDate).toBe('12/03/2023');    
+});
