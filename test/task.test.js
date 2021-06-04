@@ -47,3 +47,9 @@ test('task should belong to a project', () => {
     const task = taskCreation('task description', '12/03/2021', 'high', newProject);
   expect(newProject.todos[0].project).not.toBe(null);    
 });
+
+test('Should edit the task description', () => {
+    const task = taskCreation('task description', '12/03/2021', 'high', newProject);
+    newProject.todos[0].edit('edited description', '12/03/2021', 'high');
+    expect(newProject.todos[0].description).toBe('edited description');    
+});
