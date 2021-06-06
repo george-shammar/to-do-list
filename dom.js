@@ -158,4 +158,5 @@ const myShowTask = (project) => {
       i += 1;
     });
   };
-  
+
+  module.exports = myShowTask;
