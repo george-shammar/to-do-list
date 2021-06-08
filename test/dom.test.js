@@ -88,6 +88,13 @@ test('Should contain DOM element created with myShowTask function', () => {
 });
 
 test('Should contain DOM element created with myShowTask function', () => {
+  document.body.innerHTML = `<div id='task-div' class='pb-2'></div>`;
+  myShowTask(newProject);
+  const taskDiv = document.getElementById('task-div');
+  expect(taskDiv.innerHTML).not.toContain('project description');
+});
+
+test('Should contain DOM element created with myShowTask function', () => {
     document.body.innerHTML = `<div id='task-div' class='pb-2'></div>`;
     myShowTask(newProject);
     const taskDiv = document.getElementById('task-div');
