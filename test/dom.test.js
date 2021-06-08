@@ -2,7 +2,6 @@
  * @jest-environment jsdom
  */
 
-
 const myShowTask = require('../dom');
 const taskCreation = require('../task');
 
@@ -55,7 +54,6 @@ const projectCreation = (title, description) => ({
     this.description = description;
   },
 });
-
 
 const newProject = projectCreation('title one', 'title description');
 taskCreation('task description', '12/03/2021', 'high', newProject);
