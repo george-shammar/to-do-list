@@ -94,6 +94,13 @@ test('Should contain DOM element created with myShowTask function', () => {
     expect(taskDiv.innerHTML).toContain('12/03/2021');
 });
 
+test('Should contain DOM element created with myShowTask function', () => {
+  document.body.innerHTML = `<div id='task-div' class='pb-2'></div>`;
+  myShowTask(newProject);
+  const taskDiv = document.getElementById('task-div');
+  expect(taskDiv.innerHTML).not.toContain('09/05/2023');
+});
+
 test('Should contain DOM element created with myTask function', () => {
   document.body.innerHTML = `<div id="task-container"></div>`;
   projectsArray.push(newProject);
