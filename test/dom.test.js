@@ -2,16 +2,11 @@
  * @jest-environment jsdom
  */
 
- 
+
 const myShowTask = require('../dom');
 const taskCreation = require('../task');
 
-let projectsArray = [];
-
-
-const showTask = (project) => {
-  myShowTask(project);
-};
+const projectsArray = [];
 
 const myTask = (projectId) => {
   document.querySelector('#task-container').innerHTML = '';
@@ -46,70 +41,55 @@ const myTask = (projectId) => {
   // display new task form
   const displayTaskForm = document.getElementById('new-task');
   displayTaskForm.onclick = () => {
-    newTaskForm.style.display = 'block';
   };
 
-  const submitTaskButton = document.getElementById('submit-task');
-
-  // submitTaskButton.onclick = () => {
-  //   // retrieve value from form input
-  //   const descriptionTask = document.getElementById('exampleInputDescription').value;
-  //   const dueDateTask = document.getElementById('exampleInputDueDate').value;
-  //   let priority;
-
-
-  //   taskCreation(descriptionTask, dueDateTask, priority, project);
-  //   newTaskForm.style.display = 'none';
-
-  //   showTask(project);
-  //   saveArray();
-  // };
+  document.getElementById('submit-task');
 };
 
 const projectCreation = (title, description) => ({
-    title,
-    description,
-    todos: [],
-    edit(title, description) {
-      this.title = title;
-      this.description = description;
-    },
-  });
-  
+  title,
+  description,
+  todos: [],
+  edit(title, description) {
+    this.title = title;
+    this.description = description;
+  },
+});
+
 
 const newProject = projectCreation('title one', 'title description');
-const task = taskCreation('task description', '12/03/2021', 'high', newProject);
+taskCreation('task description', '12/03/2021', 'high', newProject);
 
 test('Should contain DOM element created with myShowTask function', () => {
-    document.body.innerHTML = `<div id='task-div' class='pb-2'></div>`;
-    myShowTask(newProject);
-    const taskDiv = document.getElementById('task-div');
-    expect(taskDiv.innerHTML).toContain('task description');
+  document.body.innerHTML = '<div id=\'task-div\' class=\'pb-2\'></div>';
+  myShowTask(newProject);
+  const taskDiv = document.getElementById('task-div');
+  expect(taskDiv.innerHTML).toContain('task description');
 });
 
 test('Should contain DOM element created with myShowTask function', () => {
-  document.body.innerHTML = `<div id='task-div' class='pb-2'></div>`;
+  document.body.innerHTML = '<div id=\'task-div\' class=\'pb-2\'></div>';
   myShowTask(newProject);
   const taskDiv = document.getElementById('task-div');
   expect(taskDiv.innerHTML).not.toContain('project description');
 });
 
 test('Should contain DOM element created with myShowTask function', () => {
-    document.body.innerHTML = `<div id='task-div' class='pb-2'></div>`;
-    myShowTask(newProject);
-    const taskDiv = document.getElementById('task-div');
-    expect(taskDiv.innerHTML).toContain('12/03/2021');
+  document.body.innerHTML = '<div id=\'task-div\' class=\'pb-2\'></div>';
+  myShowTask(newProject);
+  const taskDiv = document.getElementById('task-div');
+  expect(taskDiv.innerHTML).toContain('12/03/2021');
 });
 
 test('Should contain DOM element created with myShowTask function', () => {
-  document.body.innerHTML = `<div id='task-div' class='pb-2'></div>`;
+  document.body.innerHTML = '<div id=\'task-div\' class=\'pb-2\'></div>';
   myShowTask(newProject);
   const taskDiv = document.getElementById('task-div');
   expect(taskDiv.innerHTML).not.toContain('09/05/2023');
 });
 
 test('Should contain DOM element created with myTask function', () => {
-  document.body.innerHTML = `<div id="task-container"></div>`;
+  document.body.innerHTML = '<div id="task-container"></div>';
   projectsArray.push(newProject);
   myTask(0);
   const taskContainer = document.getElementById('task-container');
@@ -117,7 +97,7 @@ test('Should contain DOM element created with myTask function', () => {
 });
 
 test('Should contain DOM element created with myTask function', () => {
-  document.body.innerHTML = `<div id="task-container"></div>`;
+  document.body.innerHTML = '<div id="task-container"></div>';
   projectsArray.push(newProject);
   myTask(0);
   const taskContainer = document.getElementById('task-container');
