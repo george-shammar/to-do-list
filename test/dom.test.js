@@ -100,4 +100,12 @@ test('Should contain DOM element created with myTask function', () => {
   myTask(0);
   const taskContainer = document.getElementById('task-container');
   expect(taskContainer.innerHTML).toContain('Description: title description');
-})
+});
+
+test('Should contain DOM element created with myTask function', () => {
+  document.body.innerHTML = `<div id="task-container"></div>`;
+  projectsArray.push(newProject);
+  myTask(0);
+  const taskContainer = document.getElementById('task-container');
+  expect(taskContainer.innerHTML).not.toContain('task description');
+});
