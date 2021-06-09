@@ -159,6 +159,8 @@ const myShowTask = (project) => {
   });
 };
 
+const showTask = (project) => {
+  myShowTask(project);
+};
 
-
-module.exports = myShowTask;
+module.exports = {myShowTask, showTask};

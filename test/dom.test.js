@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const myShowTask = require('../dom');
+const {myShowTask, showTask} = require('../dom');
 const taskCreation = require('../task');
 
 
@@ -160,4 +160,12 @@ test('Should contain DOM element created with displayProjectTitle function', () 
   displayProjectTitle()
   const projectContainer = document.getElementById('project-container');
   expect(projectContainer.innerHTML).not.toContain('title two');
+});
+
+test('Should contain DOM element created with ShowTask function', () => {
+  document.body.innerHTML = '<div id=\'task-div\' class=\'pb-2\'></div>';
+  myShowTask(newProject);
+  showTask(newProject);
+  const taskDiv = document.getElementById('task-div');
+  expect(taskDiv.innerHTML).toContain('12/03/2021');
 });
