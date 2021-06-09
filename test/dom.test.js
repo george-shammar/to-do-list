@@ -5,6 +5,7 @@
 const myShowTask = require('../dom');
 const taskCreation = require('../task');
 
+
 const projectsArray = [];
 
 const myTask = (projectId) => {
@@ -43,6 +44,41 @@ const myTask = (projectId) => {
   };
 
   document.getElementById('submit-task');
+};
+
+const displayProjectTitle = () => {
+  let i = 0;
+  document.querySelector('#project-container').innerHTML = '';
+  projectsArray.forEach(project => {
+    const projectDiv = document.createElement('div');
+    projectDiv.setAttribute('class', 'color-white px-4 bolden show-project mx-4 pt-3 mb-2 project-div');
+    projectDiv.setAttribute('id', i);
+    const titleparagraph = document.createElement('p');
+    const titleText = document.createTextNode(`${project.title}`);
+    titleparagraph.appendChild(titleText);
+    projectDiv.appendChild(titleparagraph);
+
+    // delete icon
+    const thrashContainer = document.createElement('div');
+    const thrashProjectIcon = document.createElement('i');
+    thrashProjectIcon.setAttribute('class', 'fas fa-trash-alt color-green px-2');
+    thrashContainer.appendChild(thrashProjectIcon);
+    projectDiv.appendChild(thrashContainer);
+
+    // delete functionality==========================
+    thrashContainer.addEventListener('click', () => {
+      projectsArray.splice(projectDiv.id, 1);
+      // showTask(project);
+      // saveArray();
+      displayProjectTitle();
+    });
+
+
+    const projectContainer = document.getElementById('project-container');
+    projectContainer.appendChild(projectDiv);
+    i += 1;
+  });
+  
 };
 
 const projectCreation = (title, description) => ({
@@ -100,4 +136,28 @@ test('Should contain DOM element created with myTask function', () => {
   myTask(0);
   const taskContainer = document.getElementById('task-container');
   expect(taskContainer.innerHTML).not.toContain('task description');
+});
+
+test('Should contain DOM element created with displayProjectTitle function', () => {
+  document.body.innerHTML = '<div id="project-container"></div>';
+  projectsArray.push(newProject);
+  displayProjectTitle()
+  const projectContainer = document.getElementById('project-container');
+  expect(projectContainer.innerHTML).toBeTruthy();
+});
+
+test('Should contain DOM element created with displayProjectTitle function', () => {
+  document.body.innerHTML = '<div id="project-container"></div>';
+  projectsArray.push(newProject);
+  displayProjectTitle()
+  const projectContainer = document.getElementById('project-container');
+  expect(projectContainer.innerHTML).toContain('title one');
+});
+
+test('Should contain DOM element created with displayProjectTitle function', () => {
+  document.body.innerHTML = '<div id="project-container"></div>';
+  projectsArray.push(newProject);
+  displayProjectTitle()
+  const projectContainer = document.getElementById('project-container');
+  expect(projectContainer.innerHTML).not.toContain('title two');
 });
