@@ -2,7 +2,7 @@
 const myShowTask = (project) => {
   // display task=====================================================
   let i = 0;
-  document.querySelector('#task-div').innerHTML = '';
+  // document.querySelector('#task-div').innerHTML = '';
 
   project.todos.forEach(task => {
     const showContainer = document.createElement('div');

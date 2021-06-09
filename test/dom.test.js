@@ -94,6 +94,8 @@ const projectCreation = (title, description) => ({
 const task = (projectId) => {
   myTask(projectId);
 };
+
+
 const newProject = projectCreation('title one', 'title description');
 taskCreation('task description', '12/03/2021', 'high', newProject);
 
