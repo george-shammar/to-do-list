@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const {myShowTask, showTask} = require('../dom');
+const { myShowTask, showTask } = require('../dom');
 const taskCreation = require('../task');
 
 
@@ -78,7 +78,6 @@ const displayProjectTitle = () => {
     projectContainer.appendChild(projectDiv);
     i += 1;
   });
-  
 };
 
 const projectCreation = (title, description) => ({
@@ -146,7 +145,7 @@ test('Should contain DOM element created with myTask function', () => {
 test('Should contain DOM element created with displayProjectTitle function', () => {
   document.body.innerHTML = '<div id="project-container"></div>';
   projectsArray.push(newProject);
-  displayProjectTitle()
+  displayProjectTitle();
   const projectContainer = document.getElementById('project-container');
   expect(projectContainer.innerHTML).toBeTruthy();
 });
@@ -154,7 +153,7 @@ test('Should contain DOM element created with displayProjectTitle function', () 
 test('Should contain DOM element created with displayProjectTitle function', () => {
   document.body.innerHTML = '<div id="project-container"></div>';
   projectsArray.push(newProject);
-  displayProjectTitle()
+  displayProjectTitle();
   const projectContainer = document.getElementById('project-container');
   expect(projectContainer.innerHTML).toContain('title one');
 });
@@ -162,7 +161,7 @@ test('Should contain DOM element created with displayProjectTitle function', () 
 test('Should contain DOM element created with displayProjectTitle function', () => {
   document.body.innerHTML = '<div id="project-container"></div>';
   projectsArray.push(newProject);
-  displayProjectTitle()
+  displayProjectTitle();
   const projectContainer = document.getElementById('project-container');
   expect(projectContainer.innerHTML).not.toContain('title two');
 });

@@ -164,4 +164,4 @@ const showTask = (project) => {
 };
 
 
-module.exports = {myShowTask, showTask};
+module.exports = { myShowTask, showTask };
