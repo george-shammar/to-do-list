@@ -169,3 +169,11 @@ test('Should contain DOM element created with ShowTask function', () => {
   const taskDiv = document.getElementById('task-div');
   expect(taskDiv.innerHTML).toContain('12/03/2021');
 });
+
+test('Should NOT contain DOM element NOT created with ShowTask function', () => {
+  document.body.innerHTML = '<div id=\'task-div\' class=\'pb-2\'></div>';
+  myShowTask(newProject);
+  showTask(newProject);
+  const taskDiv = document.getElementById('task-div');
+  expect(taskDiv.innerHTML).not.toContain('11/04/2022');
+});
