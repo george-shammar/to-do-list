@@ -11,7 +11,6 @@ test('should set the title to be equal to the first parameter received', () => {
 });
 
 test('should set the title to be equal to the first parameter received', () => {
-
   expect(project.description).not.toBeNull();
 });
 
